@@ -1,0 +1,258 @@
+/* Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea {
+	background: $white;
+	border: 1px solid $border-color;
+	color: $base-color;
+}
+
+select {}
+
+textarea {
+	width: 100%;
+}
+
+@include placeholder-color($grey_5);
+
+/* Search Form
+--------------------------------------------- */
+
+.search-form {
+	border: 1px solid $border-color;
+	max-width: 400px;
+	position: relative;
+	overflow: hidden;
+
+	.search-field {
+		border: none;
+		padding-right: 44px;
+		width: 100%;
+	}
+
+	.search-submit {
+		background: transparent;
+		border: none;
+		padding: 0;
+		margin: 0;
+		min-width: 0;
+		width: 44px;
+		height: 44px;
+		line-height: 0;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		margin-top: -22px;
+		right: 0;
+
+		svg {
+			fill: $grey_7;
+			@include icon-position(20px);
+
+			&:hover {
+				fill: $highlight;
+			}
+		}
+
+	}
+}
+
+
+
+
+
+/*content  here*/
+
+
+
+
+
+html body .site-container.site-container.site-container .content-area {
+	.gform_wrapper .gform_body .top_label {
+
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="password"],
+		input[type="search"],
+		input[type="number"],
+		input[type="tel"],
+		input[type="range"],
+		input[type="date"],
+		input[type="month"],
+		input[type="week"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="color"],
+		textarea,
+		select,
+		.gform_wrapper .gform_body input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
+			background-color: $grey_4;
+			padding: .5rem;
+			font-size: 1.25em;
+			font-family: $font-alt;
+			line-height: 1.25;
+
+			&::placeholder {}
+		}
+
+		select {
+			background-color: transparent;
+			-webkit-appearance: none;
+			-webkit-border-radius: 0px;
+
+		}
+
+	}
+
+	textarea {
+		resize: vertical;
+		min-height: 150px;
+
+
+	}
+
+
+}
+
+.ginput_container_select,
+.ginput_container_multiselect,
+.gfield_time_ampm select {
+	background-color: $red;
+	color: white;
+}
+
+.ginput_container_multiselect {
+	height: auto;
+
+	select {
+		height: auto;
+		height: 160px;
+		resize: vertical;
+		display: block;
+	}
+}
+
+.gfield_time_ampm select {
+	background-color: $red !important;
+	color: white;
+}
+
+.gform_wrapper .top_label .ginput_container_select select,
+.gform_wrapper .top_label .ginput_container_multiselect select {
+	width: 100%;
+}
+
+.ginput_container_select {
+	position: relative;
+	z-index: 1;
+
+	&:after {
+		width: auto;
+		height: auto;
+		background: none;
+		content: '▼';
+		color: white;
+		opacity: 1;
+		font-size: 1em;
+		font-weight: 600;
+		text-transform: none;
+		font-style: normal;
+		position: absolute;
+		top: 50%;
+		right: 1rem;
+		transform: translateY(-50%) scaleY(.5);
+		z-index: -1;
+	}
+}
+
+
+
+.gform_wrapper ul.gform_fields li.gfield select {
+
+	margin: 0;
+	border: 0;
+	outline: none;
+	border-radius: 0 !important;
+
+}
+
+
+.ginput_container_select {
+	margin-top: 0;
+	overflow: hidden;
+	border-radius: 0;
+
+	select {
+		border-radius: 0;
+	}
+}
+
+.gfield_label {
+	//display: none;
+	font-weight: 400;
+}
+
+.ginput_complex {
+	label {
+		text-transform: uppercase;
+		font-size: .8rem;
+		margin-bottom: 1.5em;
+	}
+}
+
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit],
+.gform_wrapper .gform_page_footer input.button,
+.gform_wrapper .gform_page_footer input[type=submit] {
+	min-width: 200px;
+	float: right;
+	display: block;
+	clear: both;
+
+	&:hover {}
+}
+
+.gform_footer.top_label {
+	margin: 0;
+	padding: 0;
+}
+
+.gform_wrapper select {
+	color: white;
+}
+
+.ginput_container input {}
+
+.ginput_container_checkbox,
+.ginput_container_radio {
+	margin-top: 0;
+	margin-bottom: 2.5em;
+}
+
+//checkboxes and radio
+.gfield_checkbox,
+.gfield_radio {
+	margin: 0;
+
+	input {
+		//display: none;
+	}
+
+	li label {
+
+		&:before {}
+	}
+
+	li input:checked+label:before {}
+}
+
+.gfield_radio {
+	li label:before {
+		border-radius: 50%;
+	}
+
+}

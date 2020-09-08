@@ -1,0 +1,76 @@
+.block.block_quote {
+	.outer-block-wrapper {
+		@extend .container;
+	}
+
+	.inner-block-wrapper {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+	}
+
+
+	.block_quote__copy {
+
+		padding: .5rem 0 0;
+		border: 0;
+		font-size: 1.25rem;
+		font-weight: 500;
+		max-width: 49ch;
+		margin-right: $gutter;
+
+		p:first-child {
+			&:before {
+				content: '“';
+				display: block;
+				font-size: 10rem;
+				font-family: helvetica, arial;
+				font-weight: 800;
+				line-height: .75;
+				margin-left: -.06em;
+				margin-bottom: -3.5rem;
+				font-style: normal;
+
+			}
+
+		}
+
+		p:last-child {
+			&:after {}
+
+		}
+	}
+
+	.quote-wrapper {
+		margin-bottom: 1rem;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+
+		.inner-wrapper {
+
+			@media (min-width: $bp_phone) {}
+		}
+	}
+
+
+
+	.block_quote__source {
+		font-style: italic;
+
+		font-size: 1rem;
+
+		p:not:last-child {
+			margin-bottom: 0.25em;
+		}
+
+		p:first-child:before {
+			display: inline;
+			content: "—";
+		}
+	}
+}

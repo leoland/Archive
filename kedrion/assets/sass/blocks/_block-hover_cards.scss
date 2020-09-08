@@ -1,0 +1,154 @@
+.block.hover_cards {
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	&.numbered-1 {
+		.card {
+			counter-increment: step;
+		}
+
+		.image:before {
+			content: counter(step);
+			font-size: 100px;
+			font-weight: 300;
+			color: white;
+			opacity: .5;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.link:before {
+			content: counter(step)". ";
+		}
+	}
+
+	.inner-block-wrapper {}
+
+
+	.cards {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: -.75rem;
+	}
+
+	.card {
+		margin: .75rem;
+		min-height: 310px;
+
+		width: 230px;
+		border-bottom: solid .25rem $color__orange;
+		box-shadow: 0 0 10px -1px rgba(0, 0, 0, .3);
+		position: relative;
+		background: white;
+		overflow: hidden;
+		z-index: 1;
+	}
+
+	.image {
+		background-color: $color__blue--dark;
+		padding-top: 61%;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		z-index: 1;
+
+		&:after {
+			opacity: .3;
+			display: block;
+			content: '';
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			background-image: linear-gradient(135deg,
+					white 0,
+					white 50px,
+					rgba(0, 0, 0, 0) 50px,
+					rgba(0, 0, 0, 0) calc(100% - 30px),
+					white calc(100% - 30px));
+		}
+	}
+
+	.front .label {
+		display: none;
+
+		@media(min-width: $bp_phone) {
+			display: block;
+		}
+	}
+
+	.label {
+		text-align: center;
+		padding: 0 1rem;
+	}
+
+	.label,
+	.link {
+		@include fluid-type(font-size, 17px, 18px);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $color__blue--dark;
+		text-decoration: none;
+		line-height: 1.35;
+	}
+
+	.icon {
+		margin: 1rem auto .5rem;
+		max-width: 56px;
+		height: auto;
+	}
+
+	.hover {
+		display: block;
+		transition: all 1s;
+		padding: 1rem;
+
+
+
+		background: white;
+		z-index: 2;
+		font-size: .875em;
+
+
+		.link {
+			padding-bottom: .5em;
+		}
+	}
+
+	.card .hover:hover {
+		opacity: 1;
+	}
+
+	@media (min-width: $bp_phone) {
+
+		.hover {
+			display: block;
+			transition: all 1s;
+			padding: 1rem;
+			position: absolute;
+
+			top: 0;
+			background: white;
+			z-index: 2;
+			font-size: .875em;
+			opacity: 0;
+
+			.link {
+				padding-bottom: .5em;
+			}
+		}
+
+		.card .hover:hover {
+			opacity: 1;
+		}
+	}
+
+
+}

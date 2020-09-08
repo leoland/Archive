@@ -1,0 +1,48 @@
+$color__black: rgba(42, 42, 42, 1);
+
+$color__light-gray: #eeeeee;
+$color__white: rgba(255, 255, 255, 1);
+
+$color__green: rgba(0, 134, 124, 1);
+$color__blue:#091c5a;
+$color__blue--darkened: $color__blue;
+$color__blue--dark: $color__blue;
+$color__blue--light: $color__blue;
+$color__blue--lighter:$color__blue;
+$color__blue--lighter: $color__blue;
+$color__blue--lightest: $color__blue;
+$color__blue--lightest: $color__blue;
+
+$color__red: darkgrey;
+$color__red--light: lightgrey;
+$color__bluegray: black;
+$color__bluegray--light: teal;
+$color__orange: #ffb12c;
+$color__orange-light: salmon;
+
+$color__gray--dark: #535353;
+
+$color__gray--mid-dark: #D3D4D3;
+$color__gray: #eeeeee;
+$color__gray--light: $color__light-gray;
+
+//default styles below this line
+// --------------------------------
+
+$color__background-body: $color__white;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+//mainly for forms & accesibility
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+
+//these are main typography colors
+$color__link: $color__blue;
+$color__link-visited: $color__blue;
+$color__link-hover: $color__blue;
+$color__text-main: $color__gray--dark;

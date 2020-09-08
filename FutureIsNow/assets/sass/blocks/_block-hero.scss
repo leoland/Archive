@@ -1,0 +1,58 @@
+.block.hero {
+	overflow: visible;
+	padding: 0;
+	position: relative;
+
+	.hero__main:before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, .25);
+		z-index: 0;
+	}
+
+	.outer-block-wrapper {
+		z-index: 1;
+		@extend .container;
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+	}
+
+	.breadcrumbs {
+		display: none;
+	}
+
+	.hero__main {
+		margin: 0;
+		background-size: cover;
+
+		background-position: center;
+		position: relative;
+		width: 100%;
+		@include fluid-type(height, 200px, 500px);
+		max-height: 500px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	z-index: 2;
+
+
+
+	.hero--title {
+
+		text-align: center;
+		color: white;
+		margin: 0 !important;
+		@include fluid-type(font-size, 40px, 85px);
+		text-shadow: 0 0 5px rgba(0, 0, 0, .25);
+	}
+
+
+}

@@ -1,0 +1,75 @@
+html body #page {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea {
+		color: rgba(147, 149, 152, 1);
+		background-color: rgba(230, 231, 232, 1);
+		border: none;
+		border-radius: 0;
+		padding: .65rem 1.2rem;
+		font-size: .9rem;
+		font-family: $font__main;
+		font-weight: normal;
+		text-shadow: 0 0 .5px;
+		&:focus {
+			color: rgba(147, 149, 152, 1);
+		}
+	}
+
+	select {
+		border: 1px solid $color__border-input;
+	}
+
+	textarea {
+		width: 100%;
+	}
+	.gform_wrapper {
+		margin: 0;
+	}
+	.ginput_container {
+		margin-top: 0;
+	}
+	.gfield {
+		margin: 0 0 1.8rem;
+		padding: 0;
+	}
+	.gfield .medium, .gfield .large {
+		width: 100%;
+	}
+	.gfield:not(#field_4_3) label {
+		display: none;
+	}
+	.ginput_complex {
+		width: 100%;
+		border: none;
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		span {
+			width: calc(50% - .9rem);
+			padding: 0;
+			margin: 0;
+			input {
+
+			}
+		}
+	}
+	.gform_footer {
+		margin: 0;
+		padding: 0;
+	}
+}
+

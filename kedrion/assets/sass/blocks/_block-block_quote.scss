@@ -1,0 +1,98 @@
+.block.block_quote {
+  .outer-block-wrapper {
+    @extend .container;
+  }
+
+  .inner-block-wrapper {
+    display: flex;
+    flex-direction: row;
+    @extend .content;
+    position: relative;
+  }
+
+
+  .block_quote__copy {
+
+    padding: .5rem 0 0;
+    border: 0;
+
+    p:first-child {
+      &:before {
+        content: '“';
+        display: inline;
+      }
+
+    }
+
+    p:last-child {
+      &:after {
+        content: '”';
+        display: inline;
+      }
+
+    }
+  }
+
+  .quote-wrapper {
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-start;
+
+    .inner-wrapper {
+      padding-left: 3rem;
+
+      @media (min-width: $bp_phone) {
+        padding-left: 4.5rem;
+      }
+    }
+  }
+
+  .quote-wrapper.has-image {
+    .quote-image {
+      height: 6rem;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      flex-basis: 6rem;
+      flex-shrink: 0;
+      border-radius: 3rem;
+      border: solid .3rem $color__light-gray;
+
+      img {
+        display: block;
+        margin: 0;
+        max-width: 100%
+      }
+    }
+
+    .inner-wrapper {
+      padding-left: 1rem !important;
+    }
+
+
+
+
+
+  }
+
+
+  .block_quote__source {
+    font-style: normal;
+    font-weight: 700;
+    color: $color__bluegray;
+    font-size: 1rem;
+
+    p:not:last-child {
+      margin-bottom: 0.25em;
+    }
+
+    p:first-child:before {
+      display: inline;
+      content: "—";
+    }
+  }
+}

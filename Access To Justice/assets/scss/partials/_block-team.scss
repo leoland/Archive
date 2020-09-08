@@ -1,0 +1,73 @@
+.block-team {
+
+
+	&.bg-transparent {
+		margin: 4rem 0;
+	}
+
+	&.bg-white {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		background-color: white;
+		margin-bottom: 2.5rem;
+	}
+
+	overflow: hidden;
+
+	.intro {
+		text-align: center;
+
+		h2 {
+			margin-bottom: .25rem;
+		}
+
+		.copy {
+
+			@include fluid-property(font-size, 20px, 24px);
+			margin-bottom: 1rem;
+		}
+	}
+
+
+	.staff-list {
+		margin-top: 2.5rem;
+		margin-bottom: 2.5rem;
+		--auto-grid-min-size: 12rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+		grid-gap: 3rem;
+
+		a {
+			text-decoration: none;
+
+		}
+	}
+
+	.member-photo {
+		padding-top: 18rem;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.member-details {
+		background-color: $red;
+		color: white;
+		padding: 1.25rem;
+
+		.name {
+			margin-bottom: 0;
+		}
+
+		.title {
+			text-transform: uppercase;
+			font-size: .8em;
+		}
+
+		.blurb {
+			line-height: 1.2;
+			font-family: $font-alt-condensed;
+			font-size: .9rem;
+		}
+	}
+
+}

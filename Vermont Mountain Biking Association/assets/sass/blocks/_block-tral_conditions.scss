@@ -1,0 +1,51 @@
+.block.tral_conditions {
+	.outer-block-wrapper {
+		@extend .container
+	}
+	.inner-block-wrapper {
+		@extend .row;
+	}
+	/*content here*/
+
+	.sources {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.source {
+			width: 100%;
+			margin: $gutter 0;
+			padding: 0 $gutter;
+			height: 33rem;
+			overflow: auto;
+			-webkit-overflow-scrolling:touch;
+			position: relative;
+			z-index: 1;
+
+			iframe{
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: $gutter;
+				right: $gutter;
+				height: 100%;
+				width: calc(100% - (2 *#{$gutter}));
+				border: solid .1rem $color__gray-light;
+
+			}
+			@media (min-width: $bp_phone) {
+				flex-basis: 50%;
+				&:nth-child(even){
+					padding-left: $gutter;
+				}&:nth-child(odd){
+					padding-right: $gutter;
+				}
+			}
+		}
+	}
+}
+			

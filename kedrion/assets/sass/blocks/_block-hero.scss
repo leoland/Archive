@@ -1,0 +1,274 @@
+.block.hero {
+	padding: 0;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+
+	.outer-block-wrapper {
+		@extend .container;
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+	}
+
+	.hero__main {
+
+		position: relative;
+		width: 100%;
+
+	}
+
+	z-index: 2;
+
+
+	&.no-hero {
+		overflow: hidden;
+		height: 0;
+	}
+
+	/*content here*/
+	&.big-hero {
+		background-position: center 40%;
+
+		&.content-image-1 {
+			.hero__main {
+				background-image: linear-gradient(135deg,
+					rgba(0, 0, 0, 0) calc(100% - 50px - 5vw),
+					#{$color__blue} calc(100% - 50px - 5vw));
+			}
+
+			.img-wrapper {
+
+
+
+
+
+				img {
+					padding-top: 18%;
+					padding-left: 18%;
+				}
+
+				@media (max-width: $bp_tablet) {
+					img {
+						display: none;
+					}
+
+
+				}
+
+				@media (min-width: $bp_tablet + 1) {
+					@include fluid-type(width, 220px, 300px, 720px, 1200px);
+					position: relative;
+
+
+					overflow: visible;
+
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						//	right: -500px;
+						top: 0;
+						z-index: -1;
+						background-image: linear-gradient(right,
+							rgba(0, 0, 0, 0) 0%,
+							rgba(0, 0, 0, .4) 4px,
+							white 4px,
+							white 24px,
+							#{$color__gray} 24px,
+							#{$color__gray} 100%);
+						transform: rotate(45deg);
+						transform-origin: top right;
+						height: 300vh;
+						width: 300vw;
+						@include fluid-type(right, -250px, -350px, 720px, 1200px);
+					}
+
+				}
+
+			}
+
+
+			/*
+				background-image: linear-gradient(315deg,
+							rgba(0, 0, 0, 0) 0%,
+							rgba(0, 0, 0, .4) 4px,
+							white 4px,
+							white 24px,
+							#{$color__gray} 24px,
+							#{$color__gray} 100%);*/
+
+			.img-alt {
+				@media (min-width: $bp_tablet) {
+					display: none;
+
+				}
+
+				display: block;
+				max-width: 80%;
+				padding-top: 10rem;
+				text-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+				font-size: 2rem;
+				font-weight: bold;
+				color: white;
+				text-transform: capitalize;
+			}
+
+		}
+
+		&.content-image-0 {
+			.hero__main {
+
+				background-image: linear-gradient(135deg,
+					#{$color__blue} 0,
+					#{$color__blue} 150px,
+					rgba(0, 0, 0, 0) 150px,
+					rgba(0, 0, 0, 0) calc(100% - 60px - 1vw),
+					#{$color__orange} calc(100% - 60px - 1vw));
+			}
+		}
+
+		.hero__main {
+
+			@include fluid-type(min-height, 290px, 520px);
+
+			position: relative;
+
+
+			text-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+
+
+
+
+			/*
+	background-image: linear-gradient(135deg,
+				#{$color__gray} 0,
+				#{$color__gray} 40%,
+				white 40%,
+				white calc(40% + 20px),
+				rgba(0, 0, 0, .4) calc(40% + 20px),
+				rgba(0, 0, 0, 0) calc(40% + 24px),
+				rgba(0, 0, 0, 0) calc(100% - 142px),
+				#{$color__blue} calc(100% - 142px));
+			text-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+
+
+
+
+			*/
+		}
+
+
+		.hero--title {
+			color: $color__white;
+			font-family: $font__main;
+			text-align: center;
+			margin: 0 auto;
+			padding-bottom: .5em;
+			font-size: 0;
+
+			&:after {
+				display: none;
+			}
+		}
+
+		.copy {
+			overflow: visible;
+			padding: 1em 0 0.9em;
+			text-align: center;
+			margin: 0;
+			color: $color__white;
+			background-color: $color__bluegray;
+			@include fluid-type(font-size, 22px, 36px);
+			line-height: 1.166666667;
+			position: relative;
+			z-index: 1;
+
+			.inner-block-wrapper {}
+		}
+	}
+
+
+	&.simple-hero {
+
+		position: relative;
+		z-index: 1;
+		border-bottom: 0;
+		background: $color__blue--dark;
+		overflow: hidden;
+		border-bottom: solid .3rem $color__orange;
+
+
+
+		.hero__main {
+			z-index: 2;
+			position: relative;
+		}
+
+		.inner-block-wrapper {
+			display: flex;
+			flex-direction: column;
+
+
+			@media (min-width: $bp_phone) {
+				flex-direction: row;
+				align-items: flex-end;
+				align-content: flex-end;
+				justify-content: space-between;
+			}
+		}
+
+		.hero--title {
+			padding: 2.5rem 0;
+			overflow: shown;
+			position: relative;
+			display: inline-block;
+			text-transform: uppercase;
+			font-weight: 600;
+			z-index: 1;
+			@include fluid-type(font-size, 24px, 30px);
+
+			color: white;
+
+
+
+			&:after {
+				display: block;
+				content: '';
+				z-index: 1;
+				position: absolute;
+				top: -1px;
+				bottom: -1px;
+				left: 100%;
+				width: 100vw;
+				background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100px, rgba(255, 255, 255, 0.2) 100px, rgba(255, 255, 255, 0.2) 100%);
+			}
+
+
+		}
+
+
+
+		.copy {
+
+			padding: 2.5rem 0;
+			overflow: visible;
+			color: white;
+			margin: 0;
+			font-size: 13px;
+			font-style: italic;
+			position: relative;
+			z-index: 1;
+			max-width: 650px;
+
+			a {
+				color: inherit;
+			}
+
+		}
+	}
+
+
+}

@@ -1,0 +1,75 @@
+a {
+	color: $color__link;
+	text-decoration: none;
+	font-weight: 500;
+
+	text-decoration: underline;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover {}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+		opacity: .8;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+a:not([href]):empty {
+	/* Styles for anchors without href */
+	// position: relative;
+	// top: -2em;
+}
+
+
+.site {
+
+	p,
+	li,
+	span,
+	em,
+	dl,
+	blockquote {
+
+		a.caret[href]:after {
+			display: inline;
+			content: "\00a0>";
+			position: relative;
+			top: -0.05em;
+			padding: 0 0 0 0.25em;
+			white-space: nowrap;
+		}
+	}
+}
+
+.breadcrumbs span a:after {
+	display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	a {
+		color: inherit !important;
+	}
+
+	a:visited {
+		color: inherit !important;
+	}
+}

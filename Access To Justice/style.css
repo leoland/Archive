@@ -1,0 +1,57 @@
+/*
+	Theme Name:  Helio Fresh
+	Theme URI:   https://heliointeractive.com
+	Description: Custom WordPress Theme
+	Author:      Helio Interactive
+	Version:     1.0.0
+	License:     GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+
+
+	Based on the EA-Starter theme by Bill Erickson
+
+	File Organization
+
+|- assets/
+|  |- images/ ____________________________ # Theme images
+|  |- fonts/ _____________________________ # Custom/hosted fonts
+|  |- icons/ _____________________________ # SVG Icons
+|  |- js/
+|    |- src/ _____________________________ # Source JavaScript
+|    |- global-min.js ____________________ # Concatenated and Minified JavaScript
+|  |- css/
+|    |- main.css _________________________ # Concatenated and Minified CSS
+|    |- editor-style.css
+|  |- scss/ ______________________________ # See below for details
+|- inc/ __________________________________ # PHP classes and files
+|- partials/ _____________________________ # Template parts
+|- templates/ ____________________________ # Page templates
+
+
+
+
+
+
+Sass specific structure
+
+
+|- assets/scss/
+|-- modules/              # Common modules
+|   |-- _helpers.scss     # Helper mixins
+|   ...
+|
+|-- partials/             # Partials
+|   |-- _base.scss        # global project variables + import modules and vendors
+|   |-- _reset.scss       # Reset
+|   |-- _style-guide.scss # Main style guide for the site
+|   ...
+|
+|-- vendor/                 # CSS or Sass from other projects
+|   |-- _include-media.scss
+|   ...
+|
+|-- main.scss            # primary Sass file for frontend
+|-- editor-style.scss    # styles that apply only to backend editor
+*/

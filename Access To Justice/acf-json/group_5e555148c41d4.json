@@ -1,0 +1,157 @@
+{
+    "key": "group_5e555148c41d4",
+    "title": "Block - Events",
+    "fields": [
+        {
+            "key": "field_5ed8f247d902b",
+            "label": "Block Type",
+            "name": "block_type",
+            "type": "button_group",
+            "instructions": "Horizontal will allow to pick a few events to feature, archive will show upcoming events automatically",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "horizontal": "horizontal",
+                "archive": "archive"
+            },
+            "allow_null": 0,
+            "default_value": "horizontal",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5e5fba0161ab2",
+            "label": "Block Background Color",
+            "name": "bbgc",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "white",
+                "transparent": "transparent"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5e55515a2edbc",
+            "label": "Headline",
+            "name": "headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ed8f247d902b",
+                        "operator": "!=",
+                        "value": "archive"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e55515f2edbd",
+            "label": "Copy",
+            "name": "copy",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ed8f247d902b",
+                        "operator": "!=",
+                        "value": "archive"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5e5551682edbe",
+            "label": "Events",
+            "name": "events",
+            "type": "relationship",
+            "instructions": "will show 3, starting with chosen and fill with upcoming if needed\/availiable",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ed8f247d902b",
+                        "operator": "!=",
+                        "value": "archive"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": 3,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1591276406
+}

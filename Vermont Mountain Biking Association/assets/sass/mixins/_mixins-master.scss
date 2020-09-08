@@ -1,0 +1,214 @@
+// Rem output with px fallback
+
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+
+	@media screen and (max-width: $bp_phone) {
+		font-size: ($sizeValue * 14) * 1px;
+		font-size: $sizeValue * .875rem;
+	}
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/*
+Extends a divs background to fill the viewport on both sides,
+only ONE color is needed, additional arguments allow to specify left and right "bar" colors
+Remember html and body element should have overflow-x hidden to prevent scrollbars.
+
+color 1 will determine ALL the colors, color 2 overrides outside colors, color 3 overrides right side one.
+*/
+
+@mixin wide-background-color($color1, $color2:$color1, $color3:$color2) {
+	background-color: $color1;
+	position: relative;
+	&:before, &:after {
+		z-index: 0;
+		content: '';
+		position: absolute;
+		background-color: $color2;
+		top: 0;
+		bottom: 0;
+		left: -999%;
+		right: 100%;
+	}
+	&:after {
+		background-color: $color3;
+		left: 100%;
+		right: -999%;
+	}
+}
+
+/*
+This mixin helps with fonts that could potentially get TOO small while scaling off of the general design.
+ */
+@mixin small-font($fullSize) {
+	font-size: calc(12px + (#{$fullSize} - 12) * (100vw - 350px) / (1300 - 350));
+}
+
+/*
+Buttons Mixins
+
+*/
+
+/* Variables */
+$default: $color__teal;
+$black: $color__black;
+$white: white;
+
+/* Map button styles
+ each of these styles will produce a predictable button colored based on the variables above. e.g.:
+
+ .btn-style-default will produce a solid purple button while .btn-default-o will produce a ghost button. additional styles can be added easily below e.g. black: $black would allow for button .btn-black that would always use black for its color..
+ */
+$buttons: (
+		default: $default,
+		alt: $white,
+);
+
+[class*="btn"], button, .button {
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+	display: inline-block;
+	font-family: $font__main;
+	font-size: .85rem;
+	font-weight: bold;
+	margin: .5rem;
+	padding: .7em 1.1em;
+	/* Button reset */
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: all 120ms ease;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+@mixin btn-style($color, $ghost) {
+	@if $ghost {
+		background-color: transparent;
+		color: $color;
+	} @else {
+		background-color: $color;
+	}
+	&:hover {
+		@if $ghost {
+			background-color: transparent;
+			border-color: transparent;
+			color: $color__blue-dark;
+		} @else {
+			background-color: $color__blue-dark;
+			color: white;
+
+		}
+		//color: $white;
+	}
+}
+
+@each $key, $value in $buttons {
+	.btn-#{$key}, .button-#{$key} {
+		@include btn-style($value, false);
+	}
+	.btn-#{$key}-o, .button-#{$key}-o {
+		@include btn-style($value, true);
+	}
+}
+
+[class*="btn-alt"] {
+	color: $color__teal !important;
+}
+
+.btn-default, .btn-alt-o {
+	color: $color__white !important;
+}
+
+[class*="btn-alt-o"] {
+	color: white;
+}
+
+[class$="-o"] {
+	padding: .5em 0;
+	position: relative;
+	&:after {
+		content: '⟶';
+		font-size: 1.6em;
+		padding-left: .5em;
+		position: relative;
+		top: .025em;
+		vertical-align: center;
+	}
+}
+
+.btn-default-o {
+	color: $color__teal;
+	&:visited {
+		color: $color__teal;
+	}
+}
+
+.btn-alt-o:hover {
+	color: $color__teal !important;
+}
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	@each $property in $properties {
+		#{$property}: $min-value;
+	}
+
+	@media screen and (min-width: $min-vw) {
+		@each $property in $properties {
+			#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+		}
+	}
+
+	@media screen and (min-width: $max-vw) {
+		@each $property in $properties {
+			#{$property}: $max-value;
+		}
+	}
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+/*
+Special classes
+Any two blocks of these classes will be separated by a white border.
+one need only add the special class to the class list.
+ */
+.bright-pop {
+	border-top: solid .2rem white !important;
+}
+
+$class-list: '.hero', '.callout.style-1', '.callout.style-2', '.callout.style-5', '.text_and_icons', '.split_hovers', '.topo-show';
+
+@each $class in $class-list {
+	$top: #{$class};
+	@each $class in $class-list {
+		$bottom: #{$class};
+		#{$top} + #{$bottom} {
+			@extend .bright-pop;
+		}
+	}
+}
+

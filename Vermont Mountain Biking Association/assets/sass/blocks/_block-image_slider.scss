@@ -1,0 +1,42 @@
+.block.image_slider {
+	text-align: center;
+
+	/*content here*/
+	.image_slider--content {
+		@extend .col-md-12;
+	}
+
+	.slick-arrow {
+		background: transparent;
+		padding: 0;
+		z-index: 10;
+		height: 100%;
+		width: 100px;
+		border: none;
+		border-radius: 0;
+
+		&:before {
+			color: white;
+			font-size: 2rem;
+			opacity: .75;
+		}
+		&:hover:before {
+			opacity: 1;
+		}
+	}
+	.slick-arrow.slick-prev {
+		left: 0;
+		&:before {
+			content: '◀';
+
+		}
+	}
+	.slick-arrow.slick-next {
+
+		right: 0;
+		&:before {
+			content: '▶';
+		}
+	}
+
+}

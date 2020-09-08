@@ -1,0 +1,84 @@
+.block.three_column_callout {
+	padding: 2rem 0;
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+	}
+
+	/*content here*/
+
+	.callouts {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.callout-col {
+		color: $color__blue;
+		max-width: 290px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.callout-heading {
+		@include fluid-type(font-size, 18px, 24.68px);
+		font-weight: 600;
+	}
+
+	.callout-copy {
+		font-size: 14px;
+		font-weight: 600;
+		flex-grow: 1;
+		margin-bottom: 1em;
+	}
+
+	.button-area {
+		justify-self: end;
+		display: flex;
+		flex-direction: row;
+		align-content: flex-end;
+		align-items: flex-end;
+	}
+
+	[class*="btn"] {
+		font-size: 12px;
+		padding: .25em .75em;
+
+		&:after {
+
+			content: url('../../assets/images/right-caret-white.png');
+			display: inline-block;
+			padding-left: 5px;
+			transform: translateY(2px);
+		}
+
+		margin: 0;
+		margin-right: 5px;
+
+	}
+
+	.button-icon {
+		display: inline-block;
+		width: 43px;
+
+		img {
+			display: block;
+			margin: 0;
+		}
+	}
+
+	.small-copy {
+		font-size: 14px;
+		font-weight: regular;
+		color: $color__gray--dark;
+		display: block;
+		margin: 2.5rem auto 0;
+		text-align: center;
+	}
+}

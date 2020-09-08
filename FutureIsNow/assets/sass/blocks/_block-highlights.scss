@@ -1,0 +1,73 @@
+.block.highlights {
+
+
+	padding: 0;
+
+	text-align: center;
+
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
+		align-items: center;
+	}
+
+	.single-highlight {
+		width: 100%;
+		padding-top: 70%;
+		position: relative;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-bottom: $gutter;
+
+		@media (min-width: $bp_tablet) {
+			width: calc(50% - #{$halfgutter});
+			padding-top: 35%;
+		}
+
+	}
+
+	img {
+		display: block;
+	}
+
+	.copy {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 12.5rem;
+		color: white;
+		padding: $halfgutter;
+		text-align: left;
+
+		h2 {
+			line-height: 1;
+			@include fluid-type(font-size, 30px, 90px);
+		}
+
+		&.bg-blue {
+			background-color: transparentize($color__blue-light, .1);
+		}
+
+		&.bg-orange {
+			background-color: transparentize($color__orange, .1);
+		}
+
+		&.bg-purple {
+			background-color: transparentize($color__purple, .1);
+		}
+
+		&.bg-green {
+			background-color: transparentize($color__green, .1);
+		}
+	}
+}

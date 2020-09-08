@@ -1,0 +1,74 @@
+//dvariables for buttons
+$border-width: 0.125em;
+
+html {
+
+	[class*="btn"],
+	[class*="btn-primary"],
+	.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		/* Button reset */
+
+		font-size: 1rem;
+		text-shadow: none;
+		transition: all 0.5s ease;
+		font-family: $font-alt;
+		background-color: $color__orange;
+		display: inline-block;
+		padding: 0.75em 1em;
+		border: none;
+		text-decoration: none;
+		color: white;
+		min-width: 5em;
+		text-align: center;
+		line-height: 1.5;
+		text-transform: uppercase;
+
+		&:visited {
+			color: white;
+		}
+
+		&:hover {
+			text-decoration: none;
+			color: $color__blue--dark;
+			background-color: $color__red--light;
+			border-color: $color__red--light;
+
+			/*
+	background-color: $color__gray;
+			color: $color__blue--dark;
+			border-color: $color__blue--dark;
+
+
+			*/
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+
+	[class*="btn-alt"] {
+		border: solid $border-width $color__white;
+		color: $color__white;
+
+		&:hover {}
+
+		&:visited {
+			color: $color__white;
+		}
+	}
+
+
+}
+
+p {
+
+	[class*="btn"] {
+		margin-left: 0;
+	}
+
+
+}

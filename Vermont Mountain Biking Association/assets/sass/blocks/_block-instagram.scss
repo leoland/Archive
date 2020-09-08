@@ -1,0 +1,43 @@
+.block.instagram {
+
+	padding-bottom: 0 !important;
+	
+
+	.outer-block-wrapper {
+	}
+	.inner-block-wrapper {
+		text-align: center;
+	}
+	/*content here*/
+	.title-stuff {
+
+		margin-bottom: 2.5rem;
+	}
+.instagram--title {
+	font-size: 1.75rem;
+	font-family: $font__alt;
+	font-weight: normal;
+	line-height: 1.5;
+	display: inline;
+
+}
+	.instagram-link{
+		font-size: 1.5rem;
+		line-height: 1.75;
+		font-family: $font__main;
+		display: inline-block;
+		transform: translateY(-3px);
+	}
+.sbi_item {
+	@media (max-width: $bp_phone){
+		width: 50% !important;
+		//padding: 25% 0;
+	//	height: 0;
+	}
+}
+	.sbi_photo_wrap {
+	@media (max-width: $bp_phone){
+
+	}
+}
+}

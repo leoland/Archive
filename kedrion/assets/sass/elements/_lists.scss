@@ -1,0 +1,105 @@
+ul,
+ol,
+.bullet-p {
+	margin: 0 0 1.5em 0;
+	//color: $color__red;
+	padding-left: 0;
+
+}
+
+ul {
+	list-style: none;
+	/* Remove default bullets */
+}
+
+ul li {
+	position: relative;
+}
+
+.site-content {
+	ul li {
+		padding-left: .75em;
+	}
+
+	ul li::before,
+	.bullet-p p:before {
+		content: "";
+		/* Add content: \2022 is the CSS Code/unicode for a bullet */
+		background-color: $color__orange;
+		position: absolute;
+		left: 0;
+		top: .4em;
+		/* Change the color */
+		font-weight: bold;
+		/* If you want it to be bold */
+		display: block;
+		/* Needed to add space between the bullet and the text */
+		width: .25em;
+		height: .75em;
+
+		/* Also needed for space (tweak if needed) */
+		margin-left: 0;
+		margin-right: .5rem;
+		/* Also needed for space (tweak if needed) */
+	}
+
+	li li:before {
+		content: '•';
+		background: transparent;
+		color: $color__orange;
+		font-size: 1.5em;
+		top: -.05em;
+		height: .5em;
+		line-height: 1;
+	}
+
+	li li li:before {
+		content: '–';
+		background: transparent;
+		color: $color__orange;
+		font-size: 1.5em;
+		top: -.1em;
+		left: -.25em;
+		height: .5em;
+		line-height: 1;
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol {
+	counter-reset: item;
+}
+
+ol li {
+	display: block;
+}
+
+ol li:before {
+	content: counter(item) ". ";
+	counter-increment: item;
+	color: $color__orange;
+	display: inline-block;
+	/* Needed to add space between the bullet and the text */
+	margin-left: 0;
+	/* Also needed for space (tweak if needed) */
+	width: 1em;
+	/* Also needed for space (tweak if needed) */
+	text-align: center;
+}
+
+li>ul,
+li>ol {
+	margin-bottom: 0;
+	margin-left: 1em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}

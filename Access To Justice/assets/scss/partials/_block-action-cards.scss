@@ -1,0 +1,131 @@
+.block-action-cards {
+
+
+	&.bg-transparent {
+		margin: 4rem 0;
+	}
+
+	&.bg-white {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	overflow: hidden;
+
+	.intro {
+		text-align: center;
+
+		h2 {
+			margin-bottom: .25rem;
+		}
+
+		.copy {
+
+			@include fluid-property(font-size, 20px, 24px);
+			margin-bottom: .5rem;
+		}
+	}
+
+
+	.cards {
+
+		display: grid;
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		list-style: none;
+
+		padding: 0;
+		margin: 0 -1.35rem;
+	}
+
+	.cards .card {
+		position: relative;
+		font-family: $font-headings;
+		min-width: 350px;
+		max-width: 545px;
+		flex: 350px 1 1;
+		margin: 1.25rem;
+		background: white;
+		border: none;
+		padding: 1.5rem 1.5rem 2rem 1.5rem;
+		text-align: center;
+		transition: all .5s;
+	}
+
+	.icon-wrapper {
+		display: inline-block;
+		$size: 5rem;
+		height: $size;
+		width: $size;
+		background-color: $blue;
+		display: flex;
+		justify-items: center;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0 auto 1rem;
+		padding: 1rem;
+		transition: all .5s;
+
+		img {
+			max-width: 100%;
+		}
+
+	}
+
+	.label {
+		display: block;
+		font-family: $font-main;
+		font-size: 1.4rem;
+		font-weight: bold;
+		z-index: 2;
+	}
+
+	.card a.inner {
+
+
+		color: black;
+		text-decoration: none;
+		font-family: inherit;
+	}
+
+	.card.copy {
+		display: block;
+	}
+
+
+	.card.linked:hover {
+		background: $orange;
+
+		.inner {
+			color: white;
+		}
+
+		.icon-wrapper {
+			background-color: transparent;
+		}
+
+	}
+
+	.card.link {
+		display: inline-block;
+
+		&:after {
+			display: inline;
+			content: "→";
+		}
+	}
+
+	.card.closing-card {
+		padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+		margin-bottom: 0;
+
+		.label {
+			margin-bottom: .75em;
+		}
+
+	}
+}

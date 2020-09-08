@@ -1,0 +1,50 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: $font__main;
+	line-height: 1.1;
+	font-weight: 500;
+	font-weight: 400;
+	color: $color__blue;
+}
+
+
+
+h1 {
+	@include fluid-type(font-size, 24px, 48px);
+
+
+	&:after {}
+}
+
+h2 {
+	@include fluid-type(font-size, 22px, 32px);
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: .9em;
+
+}
+
+h3 {
+	@include fluid-type(font-size, 20px, 28px);
+
+}
+
+h4 {
+	@include fluid-type(font-size, 18px, 24px);
+
+}
+
+h5 {
+	@include fluid-type(font-size, 16px, 20px);
+
+}
+
+h6 {
+	@include fluid-type(font-size, 16px, 18px);
+
+}

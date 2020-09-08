@@ -1,0 +1,19 @@
+a {
+	color: $color__teal;
+
+	&:visited {
+		color: $color__teal;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: lighten($color__teal, 5%);
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

@@ -1,0 +1,10 @@
+body li.user-logged-in {
+	display: none !important;
+}
+body.logged-in li.user-logged-out {
+	display: none !important;
+}
+body.logged-in li.user-logged-in {
+	display: block !important;
+}
+

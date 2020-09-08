@@ -1,0 +1,111 @@
+#colophon {
+	z-index: 99999999;
+	min-height: $min-block-height;
+	margin-top: auto;
+	padding: 4rem 0 5rem;
+	background: $color__teal_dark url(../images/mountain-footer.png);
+	background-position: center calc(100% + 5vw);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	@media (min-width: $bp_phone){
+
+		padding: 4rem 0 7.5rem;
+	}
+	.footer-heading {
+		font-size: .8rem;
+		text-transform: uppercase;
+		color: $color__teal;
+	}
+	.footer-branding img {
+		@media (max-width: $bp_tablet) {
+			padding-bottom: 3rem;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	address {
+		font-size: .8rem;
+		line-height: 1.35;
+		font-weight: normal;
+		color: white;
+	}
+	#footer-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.menu-item {
+
+		position: relative;
+		font-size: .8rem;
+		a {
+			padding: 0;
+			color: white;
+			text-align: center;
+
+		}
+	}
+	.sub-menu {
+		display: none;
+	}
+	.site-info {
+		bottom: 4em;
+		padding-top: 3rem;
+		color: white;
+		font-weight: normal;
+		font-size: .6rem;
+		@media (min-width: $bp_phone){
+
+			position: absolute;
+		}
+	}
+	.site-info a {
+		color: $color__teal;
+	}
+	.sep {
+		padding: 10px;
+	}
+	.gform_wrapper .gfield {
+		margin-bottom: .75rem;
+	}
+	.gform_wrapper input[type="text"],
+	.gform_wrapper input[type="submit"] {
+		font-size: .8rem;
+	}
+	.gform_wrapper input[type="text"] {
+		background: $color__teal_darker;
+		color: white !important;
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: white;
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+		  color: white;
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+		  color: white;
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+		  color: white;
+		}
+	}
+	.clearfix {
+		clear: both;
+	}
+	.social-links {
+		padding-top: 1rem;
+		a {
+			i {
+				font-size: 1.25rem;
+				color: $color__teal;
+				padding: 0 .5rem 0 0;
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+}

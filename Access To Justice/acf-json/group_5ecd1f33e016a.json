@@ -1,0 +1,161 @@
+{
+    "key": "group_5ecd1f33e016a",
+    "title": "CPT - Stakeholders & Court Users",
+    "fields": [
+        {
+            "key": "field_5ecd1f66b2cf8",
+            "label": "Optional Descriptors",
+            "name": "optional_descriptors",
+            "type": "text",
+            "instructions": "If used, This field will be used in lieu of the taxonomy terms",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ecd1fc1b2cf9",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5ecd72992f98b",
+            "label": "Resource Location",
+            "name": "resource_location",
+            "type": "button_group",
+            "instructions": "Internal resources will be files uploaded to this site or content that users can read directly, External resources are links to other places on the internet where the actual resource is housed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "internal": "Internal",
+                "external": "External"
+            },
+            "allow_null": 0,
+            "default_value": "external",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5ecd1fe6b2cfa",
+            "label": "File",
+            "name": "file",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ecd72992f98b",
+                        "operator": "==",
+                        "value": "internal"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ecd73752f98c",
+            "label": "External Resource URL",
+            "name": "external_resource_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ecd72992f98b",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ecd7a6b94974",
+            "label": "Suggest A Change",
+            "name": "suggest_a_change",
+            "type": "true_false",
+            "instructions": "Whether to display the \"suggest change\" box functionality or not.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Display",
+            "ui_off_text": "Hide"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "stakeholders"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "court_user_resources"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1590524598
+}

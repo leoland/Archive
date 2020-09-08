@@ -1,0 +1,62 @@
+.block.search {
+
+	background-image: url('../../assets/images/steel-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	.outer-block-wrapper {
+		@extend .container;
+
+		&:after, &:before {
+			display: none;
+		}
+
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+
+		max-width: 740px;
+	}
+
+	h1 {
+		margin-bottom: 1.1em;
+	}
+
+	form {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+
+		margin-bottom: 1em;
+
+		input, button {
+			margin: 0;
+			height: 3.125rem;
+			flex-grow: 1;
+		}
+		input {
+			padding-left: 1rem;
+			background-color: $color__light-gray;
+			font-style: italic;
+			text-transform: uppercase;
+			border: none;
+		}
+
+		button {
+			max-width: 150px;
+			border: none;
+			background-color: $color__gray;
+			color: $color__light-gray;
+		}
+	}
+
+}

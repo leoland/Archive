@@ -1,0 +1,197 @@
+.block.team {
+
+	padding: 3rem 0 4rem;
+
+
+	/*content here*/
+
+	.block-heading {
+		@extend .content;
+		margin-bottom: 3.5rem;
+	}
+
+	.members {
+		@extend .content;
+		margin: 0 auto;
+
+	}
+
+	.members .inner {
+		margin: -1.125rem -.75rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		@media (min-width : $bp_phone) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+
+	.member {
+		position: relative;
+		padding: 1.125rem .75rem;
+		width: 100%;
+
+		@media(min-width : $bp_phone) {
+			width: 50%;
+		}
+
+		@media(min-width : $bp_tablet) {
+			width: 33.3333%;
+		}
+	}
+
+	.details {
+		position: absolute;
+		padding: .75rem;
+		bottom: 1.125rem;
+		right: .75rem;
+		left: .75rem;
+		background: $color__bluegray;
+	}
+
+	a {
+		margin: 0;
+		text-decoration: none;
+	}
+
+	a:hover .details {
+		background: $color__red;
+	}
+
+	img {
+		margin: 0;
+		display: block;
+	}
+
+	.member {
+
+		h3,
+		p {
+			font-family: $font-alt;
+			color: white;
+			text-align: center;
+		}
+	}
+
+	h3 {
+		font-size: 1.1rem;
+		margin: 0;
+		font-weight: bold;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.single-team_member {
+
+	.entry-content {
+		margin-top: 0;
+	}
+
+	.member-name {}
+
+	.member-photo {
+		margin: 0 auto 2rem;
+
+		width: 16.5rem;
+	}
+
+	.main {
+		@extend .content;
+		@include clearfix();
+	}
+
+	@media (min-width : $bp_phone) {
+
+
+		.member-photo {
+			margin: 0 2rem 2rem 0;
+			float: left;
+			max-width: 400px;
+		}
+
+
+	}
+
+	@media (min-width : $bp_desktop) {
+
+		.member-photo {
+
+			float: left;
+		}
+
+	}
+
+	.member-quote {
+		padding-top: 2rem;
+		border-top: solid .25rem $color__orange;
+	}
+
+
+	.quote-heading,
+	.quote-body,
+	.quote-source,
+	.back-link {
+		@extend .content;
+	}
+
+	.quote-heading {
+		margin-bottom: 1.5rem;
+	}
+
+	.quote-body {
+
+		p {
+			margin-bottom: .25em;
+		}
+
+		p:first-child {
+			&:before {
+				content: '“';
+				display: inline;
+			}
+
+		}
+
+		p:last-child {
+
+			&:after {
+				content: '”';
+				display: inline;
+			}
+
+		}
+
+		@include fluid-type(font-size, 24px, 36px);
+
+		color: $color__red;
+		font-weight: 500;
+
+		margin-bottom: .5rem;
+	}
+
+	.quote-source {
+		@include fluid-type(font-size, 18px, 24px);
+		margin-bottom: 1.5rem;
+
+		&:before {
+			display: inline;
+			content: '—';
+		}
+	}
+
+	.back-link {
+		margin-bottom: 3.6rem;
+		display: block;
+		font-weight: 600;
+
+		&:before {
+			display: inline;
+			content: '<  ';
+		}
+	}
+}

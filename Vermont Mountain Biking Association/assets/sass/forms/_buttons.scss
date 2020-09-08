@@ -1,0 +1,25 @@
+html body #page {
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+
+
+
+	@extend .btn-default;
+
+
+
+		&:hover {
+			border-color: $color__border-button-hover;
+		}
+
+		&:active,
+		&:focus {
+			border-color: $color__border-button-focus;
+		}
+	}
+}
+
+
+

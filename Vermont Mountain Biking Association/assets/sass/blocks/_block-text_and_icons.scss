@@ -1,0 +1,152 @@
+.block.text_and_icons, .block.stats {
+
+	/*
+	Backgrounds
+	 */
+	&.style-1 {
+		$bg: $color__teal;
+		background: $bg !important;
+		&.topo-show {
+			background: linear-gradient(to right, transparentize($bg, .05), transparentize($bg, .05)), url(../images/topo.svg), $bg !important;
+		}
+	}
+	&.style-2 {
+
+		$bg: $color__orange;
+		background: $bg !important;
+		&.topo-show {
+			background: linear-gradient(to right, transparentize($bg, .05), transparentize($bg, .05)), url(../images/topo.svg), $bg !important;
+		}
+	}
+
+	/*
+	Typography
+	 */
+
+	text-align: center;
+	color: white;
+
+	.icon-label {
+		font-size: 1rem;
+		font-weight: bold;
+		line-height: 1.5;
+		display: inline-block;
+	}
+	.icon-copy {
+		font-size: .8rem;
+		line-height: 1.6;
+	}
+	/*
+	link stuff
+	 */
+	a {
+		.icon-label {
+			//text-decoration: underline;
+		//	border-bottom: solid white .05rem;
+			color: white;
+		}
+		text-decoration: none;
+		&:hover {
+
+			.icon-img-wrapper {
+			}
+			img {
+				transform: scale(1.15) !important;
+			}
+		}		@media (max-width: $bp_phone) {
+
+			.icon-img-wrapper {
+			}
+			img {
+				&:not(:hover) {
+					animation: pulse 5s infinite linear;
+				}
+			}
+		}
+	}
+
+	@keyframes pulse {
+		0% {
+			transform: scale(1);
+		}
+
+		50% {
+			transform: scale(1);
+		}
+		60% {
+			transform: scale(1.05);
+		}
+		75% {
+			transform: scale(1);
+		}
+		90% {
+			transform: scale(1.05);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+
+
+	/*layout*/
+	.text_and_icons--content {
+		@extend .col-md-12;
+	}
+
+	.icons-wrapper {
+		margin-top: 1.5rem;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: start;
+	}
+	.icon-outer-wrapper {
+		padding: 1.25rem $halfgutter;
+		width: 50%;
+		@media(min-width: $bp_phone) {
+			width: 20%;
+		}
+	}
+	.icon-img-wrapper {
+		margin: 0 auto 1.5rem;
+		max-width: 5.6rem;
+		display: flex;
+		align-items: flex-end;
+		img {
+			transition: all .3s;
+		}
+	}
+
+	/*
+	buttons
+	 */
+
+	.buttons {
+		margin-right: -.5rem;
+		margin-left: -.5rem;
+		width: calc(100% + 1rem);
+	}
+	.btn {
+		opacity: .95;
+	}
+	&.style-1, &.style-2 {
+		a.btn {
+			@extend .btn-alt;
+		}
+	}
+	&.style-1
+	a.btn {
+		color: $color__teal;
+	}
+
+	&.style-2 {
+		a.btn {
+			color: $color__orange;
+		}
+
+	}
+}
+
+
+			

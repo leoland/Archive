@@ -1,0 +1,60 @@
+.block-link-blocks {
+
+
+	&.bg-transparent {
+		margin: 4rem 0;
+	}
+
+	&.bg-white {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+
+	.link-blocks-heading {
+		text-align: center;
+	}
+
+	.link-blocks-copy {
+		text-align: center;
+		font-size: 1.2rem;
+		margin: 0;
+	}
+
+	.links-wrapper {
+		margin-top: 2.5rem;
+		margin-bottom: 2.5rem;
+		--auto-grid-min-size: 13.8rem;
+		--auto-grid-min-size: 12.8rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+		grid-gap: 12px;
+	}
+
+
+	a.link-block {
+		text-decoration: none;
+		min-height: 7.6rem;
+		padding: 1rem;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		font-size: 1.4rem;
+		font-family: $font-alt;
+		text-align: center;
+		color: white;
+
+		&:visited {
+			color: white;
+		}
+	}
+
+	.link-wrapper {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		margin-bottom: 2.5rem;
+	}
+}

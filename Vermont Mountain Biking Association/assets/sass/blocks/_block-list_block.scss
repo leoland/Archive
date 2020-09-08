@@ -1,0 +1,43 @@
+.block.list_block {
+	&.style-1{
+		background: $color__gray-light;
+	}
+	&.style-2{
+		background: $color__white;
+	}
+
+  .outer-block-wrapper {
+	@extend .container
+  }
+  .inner-block-wrapper {
+	@extend .row;
+  }
+  /*content here*/
+  
+  .pre-heading, .heading {
+		text-align: center;
+	}
+	.heading{
+		margin-bottom: 2rem;
+	}
+  .list-items {
+		list-style: none;
+		padding: 0 $halfgutter;
+		max-width: 50rem;
+		margin: 0 auto;
+		@media (min-width: $bp_phone){
+			column-count: 2;
+			column-gap: 4* $gutter;
+		}
+	}
+  .list-item {
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+		margin-bottom: 1rem;
+		p{
+		}
+	}
+  
+}
+			

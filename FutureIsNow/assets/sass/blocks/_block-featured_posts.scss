@@ -1,0 +1,153 @@
+.block.featured_posts,
+	{
+
+	.intro-copy {
+		color: inherit;
+		margin-bottom: .5rem;
+	}
+
+	margin: 0;
+
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+		max-width: $narrow_container;
+		margin: 0 auto;
+
+		display: flex;
+		flex-direction: column;
+
+
+		&:before,
+		&after {
+			display: none;
+		}
+	}
+
+	/*content here*/
+
+
+
+	.post-thumbnails {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		margin-top: 0;
+		margin-bottom: 0;
+		width: 100%;
+
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+		}
+
+	}
+
+
+
+
+
+	.outer-post-wrapper {
+		flex-grow: 1;
+		margin-bottom: 2rem;
+
+		@media (min-width: $bp_phone) {
+
+
+			flex : 0 0 calc(33.3333% - #{$halfgutter});
+
+		}
+	}
+
+	.post-thumbnail {
+		display: block;
+		padding-top: 60%;
+		position: relative;
+		background-position: center center;
+		background-size: cover;
+		font-size: .9rem;
+	}
+
+
+
+	.post-content {
+		padding: $halfgutter;
+		background-color: #F5F9F9;
+	}
+
+
+
+	a.title,
+	a.title:visited {
+		display: block;
+		text-decoration: none;
+		@include fluid-type(font-size, 16px, 20px) color: black;
+		margin-bottom:
+			1rem;
+		font-weight: 600;
+	}
+
+	.excerpt {
+		@include fluid-type(font-size, 16px, 20px);
+		margin-bottom: 1rem;
+	}
+
+	.read-more,
+	.read-more:visited {
+		color: $color__purple;
+		font-weight: 600;
+		font-size: .9rem;
+		margin-top: .5rem;
+		text-transform: uppercase;
+		@include fluid-type(font-size, 14px, 18px);
+		/*
+		&:after {
+			display: inline-block;
+			content: '→';
+			padding-left: .3em;
+			font-weight: bolder;
+			font-size: 1.1em;
+
+		}
+		*/
+	}
+
+
+	.navigation.posts-navigation {
+		flex: 0 0 100%;
+	}
+}
+
+
+.block.posts-archive.block.posts-archive {
+
+
+	.outer-post-wrapper {
+		margin-bottom: 1rem;
+
+		@media (min-width: $bp_phone) {
+			padding: $gutter $halfgutter;
+
+			flex: 0 0 33.3333%;
+
+			&:nth-child(3n):not(:last-child) {
+				&:after {
+					display: block;
+					content: '';
+
+					padding-top: 3rem;
+					position: absolute;
+					right: $halfgutter;
+					left: $halfgutter;
+				}
+			}
+		}
+	}
+}

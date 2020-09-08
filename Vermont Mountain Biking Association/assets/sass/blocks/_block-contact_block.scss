@@ -1,0 +1,120 @@
+.block.contact_block {
+
+&.order-reverse {
+	.inner-block-wrapper {
+		flex-direction: column-reverse;
+
+		> div {
+			&:first-child{
+				padding-bottom: 0;
+			}
+			&:last-child{
+				padding-bottom: 2 * $gutter;
+			}
+		}
+		@media(min-width: $bp_phone) {
+			flex-direction: row-reverse;
+			> div:last-child{
+				padding-right: 3rem;
+			}
+			> div:first-child{
+				padding-left: 3rem;
+			}
+
+		}
+	}
+}
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		display: flex;
+		flex-direction: column;
+		> div {
+			padding: 0 $halfgutter 2 * $gutter;
+			&:last-child{
+			padding-bottom: 0;
+			}
+		}
+		@media(min-width: $bp_phone) {
+			flex-direction: row;
+			> div {
+				padding-bottom: 0 !important;
+			}
+			> div:first-child{
+				padding-right: 3rem;
+			}
+			> div:last-child{
+				padding-left: 3rem;
+			}
+
+		}
+	}
+
+
+
+	&.type-form {
+		.form, .icons {
+			width: 100%;
+
+		}
+		.form {
+			@media (min-width: $bp_phone) {
+				width: 60%
+			}
+		}
+		.icons {
+			@media (min-width: $bp_phone) {
+				width: 40%;
+			}
+		}
+
+	}
+
+	&.style-3 {
+		color: $color__white;
+		text-shadow: 0 0 .5px;
+	}
+
+	&.type-general {
+		.general, .icons {
+			width: 100%;
+			@media (min-width: $bp_phone) {
+				width: 50%;
+			}
+		}
+		h2 {
+			font-family: $font__alt;
+			@include fluid-type(font-size, 400px, 1600px, 30px, 60px);
+			line-height: 1.2;
+			margin-bottom: .5em;
+			margin-top: -.15em;
+		}
+		.copy{
+			line-height: 1.7;
+		}
+	}
+.icons {
+	display: flex;
+	flex-direction: column;
+}
+	.contact-icon {
+		display: flex;
+		flex-direction: row;
+		flex-grow: unset;
+		margin-bottom: 1.5rem;
+	}
+	.icon-image{
+		flex: none;
+		width: 3.5rem;
+		margin: 0 $gutter 0 0;
+		padding: 0;
+		display: block;
+	}
+	.icon-copy{
+		line-height: 1.5;
+
+	}
+}
+			

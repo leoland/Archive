@@ -1,0 +1,188 @@
+{
+    "key": "group_block_hero",
+    "title": "Hero Options",
+    "fields": [
+        {
+            "key": "field_5ce3de5f900cd",
+            "label": "Hero Style",
+            "name": "hero_style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "big-hero": "Big Hero with image",
+                "simple-hero": "Simple blue header with optional copy",
+                "no-hero": "Hidden Title for pages that need to get straight to content"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ca4e0a4577e9",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ce3de5f900cd",
+                        "operator": "==",
+                        "value": "big-hero"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59fafca1ec01f",
+            "label": "Heading Override",
+            "name": "heading",
+            "type": "text",
+            "instructions": "If used, this will replace the original title of the page\/post without affecting permalinks.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ce3de5f900cd",
+                        "operator": "!=",
+                        "value": "no-hero"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ca4c7208a7bf",
+            "label": "Copy",
+            "name": "copy",
+            "type": "textarea",
+            "instructions": "Optional copy that will display under the title.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ce3de5f900cd",
+                        "operator": "==",
+                        "value": "simple-hero"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5db847034e763",
+            "label": "content Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "Used for front page logo type",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ce3de5f900cd",
+                        "operator": "==",
+                        "value": "big-hero"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "frm_display"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "frm_display"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "featured_image"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1573678714
+}

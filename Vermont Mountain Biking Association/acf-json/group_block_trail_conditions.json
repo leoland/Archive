@@ -1,0 +1,85 @@
+{
+    "key": "group_block_trail_conditions",
+    "title": "Block - Trail conditions",
+    "fields": [
+        {
+            "key": "field_5a986e2555598",
+            "label": "Trail Condition Sources",
+            "name": "Sources",
+            "type": "repeater",
+            "instructions": "Simply add the source url and an appropriately sized iframe will automatically be generated.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5a986e4155599",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Source",
+            "sub_fields": [
+                {
+                    "key": "field_5a9891c4039be",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "This Optional field is just to keep the trail feeds organized. it serves no front end purpouse.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a986e4155599",
+                    "label": "Source URL",
+                    "name": "source_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "acftc-group-0",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1519948437
+}

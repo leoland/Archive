@@ -1,0 +1,126 @@
+.block.logo_block {
+	padding: 5rem 0 3rem;
+	/*
+	basic background colors
+	 */
+	&.style-1 {
+		background: $color__gray-light;
+		$bg: $color__gray-light;
+		background: $bg !important;
+		&.topo-show {
+			background: linear-gradient(to right, transparentize($bg, .05), transparentize($bg, .05)), url(../images/topo.svg), $bg !important;
+		}
+	}
+
+	&.style-2 {
+
+		$bg: $color__white;
+		background: $bg !important;
+		&.topo-show {
+			background: linear-gradient(to right, transparentize($bg, .05), transparentize($bg, .05)), url(../images/topo.svg), $bg !important;
+		}
+	}
+
+	/*content here*/
+	.logo_block--content {
+		//@extend .col-md-12;
+	}
+	//typography
+	text-align: center;
+.heading{
+
+	margin-bottom: 1rem;
+
+	&.heading-style-2{
+
+		color: $color__teal;
+
+		text-transform: uppercase;
+		font-weight: normal;
+		font-family: $font__accent;
+	}
+}
+	.copy {
+		max-width: 40rem;
+		margin: 0 auto;
+	}
+
+	/*
+	layout things
+	 */
+	.logos-wrapper {
+		width: 100%;
+		margin: 2rem -$halfgutter 0;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+
+	}
+
+	.logo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-items: center;
+		width: 50%;
+		padding: $gutter $halfgutter;
+
+
+	}
+
+	@media (min-width: $bp_phone) {
+		.limit-3 .logo{
+			width: 33%;
+
+			padding: 3*$gutter $halfgutter;
+		}
+		.limit-4 .logo {
+			width: 25%;
+
+			padding: 2*$gutter $halfgutter;
+		}
+
+	}
+
+
+	.image-wrapper {
+		width: 10rem;
+		height: 10rem;
+		//padding-top: 100%;
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		img{
+			//width: 100%;
+		}
+	}
+
+
+	/*
+	filters & hovers
+	 */
+	.logo {
+		filter: grayscale(1) contrast(.75) opacity(.8);
+		transition: all .3s;
+
+
+
+	}
+
+	.logo[href] {
+		filter: grayscale(1) contrast(.75) opacity(.7);
+
+		//	filter: grayscale(1) sepia(100%) hue-rotate(132deg) saturate(4) contrast(.75);
+
+	}
+	.logo[href]:hover {
+		transform: scale(1.15);
+		filter: grayscale(1) contrast(.75) opacity(1);
+	}
+
+
+}
+
+

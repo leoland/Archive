@@ -1,0 +1,209 @@
+.block.beneficiaries {
+	padding: 3rem 0 2rem;
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {}
+
+	/* content here */
+	h1 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		flex-direction: column;
+		transition: all .5s;
+
+		img {
+			filter: grayscale(100%);
+			transition: all .5s;
+		}
+
+		&[href=''] {
+			pointer-events: none;
+			cursor: default;
+
+
+		}
+
+		&:not([href='']):hover img,
+		&:focus {
+			outline: none;
+			filter: none;
+		}
+
+	}
+
+
+	&.grid {
+		.beneficiary-list {
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			margin: $halfgutter $halfgutter*-1;
+		}
+
+		a {
+			background: white;
+			position: relative;
+			flex: 0 0 100%;
+			margin: 0 $halfgutter $gutter;
+			box-shadow: 0 0 1em 0 rgba(0, 0, 0, .3);
+			overflow: hidden;
+			padding-top: 82%;
+
+			@media (min-width: $bp_phone) {
+				flex: 0 0 calc(50% - #{$gutter});
+				padding-top: 41%;
+			}
+
+			@media (min-width: $bp_tablet) {
+				flex: 0 0 calc(33.33333333% - #{$gutter});
+				padding-top: 27.333333333%;
+			}
+
+
+			img {
+				display: block;
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				max-width: calc(100% - 3rem);
+				transform: translate(-50%, -50%);
+
+			}
+
+			.more-details {
+				font-weight: 400;
+				position: absolute;
+				bottom: 0;
+				padding-bottom: .5em;
+				width: 100%;
+				text-align: center;
+				display: block;
+
+				&:after {
+					display: inline-block;
+					content: '';
+					margin: auto;
+					margin-left: .2em;
+
+					line-height: 0;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: .5em .4em 0 .4em;
+					border-color: $color__red transparent transparent transparent;
+					transform: rotate(-90deg) translateX(15%) translateY(.25em);
+				}
+			}
+		}
+
+
+
+
+	}
+}
+
+.single-beneficiaries {
+
+	.single-top {
+		background: url(../../assets/images/ben-single-bg.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		&:before {
+			display: block;
+			content: '';
+			height:
+				4rem;
+			width: 100%;
+
+		}
+
+		.ben-title {
+			@include fluid-type(min-height, 200px, 400px);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			h1 {
+				color: white;
+				@include fluid-type(font-size, 26px, 50px);
+				line-height: 1.16;
+				font-weight: 700;
+				text-align: center;
+				margin: 0 auto !important;
+				padding: 1em;
+			}
+
+		}
+	}
+
+
+	.back-link {
+		background: $color__blue--dark;
+		color: white;
+		display: block;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: .55rem;
+
+		span {
+			position: relative;
+			display: inline-block;
+			text-align: center;
+		}
+
+		span:before {
+			transition: all 1s;
+			display: inline-block;
+			content: '';
+			margin: auto;
+			margin-right: .7em;
+			margin-top: .1em;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: .4em .5em .4em 0;
+			border-color: transparent $color__red transparent transparent;
+		}
+
+		&:hover span {
+
+			opacity: .8;
+
+			&:before {}
+		}
+
+
+	}
+
+	.copy-content .ben-logo {
+
+
+		margin-top: 2rem;
+
+		img {
+			display: block;
+			margin: 0 auto;
+
+			mix-blend-mode: multiply;
+		}
+
+	}
+}

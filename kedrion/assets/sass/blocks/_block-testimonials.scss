@@ -1,0 +1,122 @@
+.block.testimonials {
+	padding          : 2em 0 5rem;
+	background-color : $color__blue;
+	color            : $color__white;
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+		padding : 0 3rem;
+		margin : 0;
+	}
+
+	/*content here*/
+
+	.title {
+		text-align    : center;
+
+		margin-bottom : 1.5em;
+	}
+
+	.testimonials-slider {
+		max-width : 800px;
+		margin    : 0 auto;
+
+	}
+
+	.testimonial {
+		position: relative;
+		padding-top : 8rem;
+		&:before {
+			content     : '“';
+			display     : block;
+			font-family : Helvetica, sans-serif;
+			font-size   : 10rem;
+			font-weight : bold;
+			color       : $color__blue--light;
+			position    : absolute;
+			top         : 0;
+			left        : 50%;
+			transform   : translateX(-50%);
+			line-height: 1;
+		}
+	}
+
+	.copy {
+		@include fluid-type(font-size, 19px, 24px);
+		font-family : $font-alt;
+		font-weight : 300;
+	}
+
+	.source {
+		display    : block;
+		margin-top : 1.5em;
+		@include fluid-type(font-size, 19px, 24px);
+		color : $color__white;
+		font-weight : 700;
+		font-family: $font-alt;
+
+	}
+	.source-detail{
+		color: $color__white;
+		@include fluid-type(font-size, 19px, 24px);
+		font-family : $font-alt;
+		font-weight : 400;
+	}
+
+
+	.slick-slider{
+		.slick-next, .slick-prev{
+			z-index: 2;
+			width: 4rem;
+			height: 4rem;
+			font-size: 3rem;
+
+
+			&:hover{
+				transform: translate(0, -50%);
+				box-shadow: none;
+			}
+			&:before {
+				font-size: 1em;
+				content: url(../../assets/images/arrow-left.png);
+				font-weight: 600;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		.slick-prev{
+			left: -5rem;
+			&:before {
+			//	content: 'url(../../assets/images/arrow-left.png)';
+			}
+		}
+
+		.slick-next{
+			right: -5rem;
+			&:before {
+				transform: translate(-50%, -50%) scaleX(-1);
+			//	content: '\f054';
+			}
+		}
+	}
+	.slide-wrapper {
+
+	}
+	.slick-dots.slick-dots {
+		bottom  : -3rem;
+		display : none !important;
+		button {
+			&:hover {
+				box-shadow : none;
+				transform  : none;
+			}
+		}
+	}
+
+}
+

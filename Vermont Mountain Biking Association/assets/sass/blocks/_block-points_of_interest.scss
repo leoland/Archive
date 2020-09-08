@@ -1,0 +1,369 @@
+.block.points_of_interest {
+	.outer-block-wrapper {
+		@extend .container
+	}
+	.inner-block-wrapper {
+		@extend .row;
+	}
+	/*content here*/
+
+	.facetwp {
+		@extend .col-sm-12;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+			display: block;
+		}
+	}
+	.sidebar, .content {
+		padding: 0;
+		width: 100%;
+		@media (min-width: $bp_phone) {
+			float: left;
+		}
+	}
+	.sidebar {
+		@media (min-width: $bp_phone) {
+			width: 25%;
+		}
+	}
+	.content {
+		@media (min-width: $bp_phone) {
+			width: 74.5%;
+			float: right;
+		}
+	}
+	.facetwp-facet {
+		margin-bottom: 2rem;
+	}
+	.facetwp-type-checkboxes {
+		margin-bottom: 0;
+	}
+	.list {
+		margin: -$halfgutter 0 0;
+		width: 100%;
+		.facetwp-template {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			width: 100%;
+			@media (min-width: $bp_phone) {
+				flex-direction: row;
+				padding-left: 3rem;
+			}
+		}
+	}
+
+	.facetwp-checkbox {
+		background: url(../images/checkbox-unchecked.png) 0 50% no-repeat;
+		background-size: 1rem 1rem;
+		cursor: pointer;
+		margin-bottom: 4px;
+		padding-left: 1.5rem;
+	}
+
+	.facetwp-checkbox.checked {
+		background-image: url(../images/checkbox-checked.png) !important;
+	}
+
+	.facetwp-search-wrap {
+		width: 100%;
+		input {
+			text-transform: uppercase;
+
+			width: 100%;
+		}
+		.facetwp-btn {
+			margin: 0;
+			padding: .1rem .5rem;
+		}
+	}
+
+	.label {
+		color: $color__teal;
+		display: block;
+		font-size: .9rem;
+		font-weight: bold;
+		margin-bottom: 0;
+		text-transform: uppercase;
+	}
+	.single-plan_your_ride {
+		color: $color__black !important;
+		display: block;
+		padding: $halfgutter;
+		&:visited {
+
+			color: $color__black !important;
+		}
+		@media (min-width: $bp_phone) {
+			width: 50%;
+		}
+		h3 {
+
+			color: $color__black !important;
+		}
+		&:hover {
+			text-decoration: none;
+			h3 {
+
+				text-decoration: underline;
+			}
+		}
+
+		h3 {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+	}
+	.single-plan_your_ride.trails {
+		display: block;
+		@media (max-width: $bp_phone) {
+			height: 65vw;
+		}
+		position: relative;
+	}
+	.thumbnail {
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: 1rem;
+		padding-top: 55%;
+		position: relative;
+		width: 100%;
+		z-index: 0;
+	}
+
+	.poi-icons {
+		bottom: -1rem;
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		right: 0;
+		z-index: 2;
+
+	}
+	.poi-icon {
+		display: block;
+		img {
+			margin-right: .8rem;
+		}
+	}
+
+	.map {
+		display: none;
+	}
+}
+
+.poi-meta {
+	line-height: 1.25;
+	z-index: 1;
+
+}
+
+.types, .poi-regions {
+	display: inline;
+	font-size: 12px;
+	font-weight: bold;
+	span {
+		color: $color__black !important;
+		line-height: 1;
+	}
+	> span:not(:first-child):before {
+		content: ', ';
+		display: inline;
+	}
+}
+
+.poi-regions {
+	font-weight: normal;
+}
+
+.single.single-plan_your_ride {
+	z-index: 1;
+	.outer-block-wrapper {
+		@extend .container
+	}
+	.inner-block-wrapper {
+		@extend .row;
+	}
+	.types, .poi-regions {
+
+		font-size: .8rem;
+	}
+
+	.poi-header {
+		background-color: rgba(243, 244, 244, 1);
+	}
+	.poi-logo {
+		display: block;
+		margin: 2rem auto;
+		max-width: 15rem;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	.favorites {
+		display: none;
+	}
+
+	.content {
+		@extend .col-sm-12;
+		background: white;
+		display: flex;
+		flex-direction: column;
+		padding-top: 2rem;
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+
+		}
+	}
+	.side-info {
+		@media(min-width: $bp_phone) {
+			width: 15rem;
+			min-width: 15rem;
+			flex-basis: 15rem;
+		}
+	}
+	.main-info {
+
+		@media (min-width: $bp_phone) {
+
+			padding-left: $gutter *2;
+		}
+	}
+
+	.email, .phone, .web, .pin {
+		color: $color__black;
+		display: block;
+		font-family: $font__main;
+		font-size: .9rem;
+		font-weight: bold;
+		margin: .6rem 0;
+		min-height: 3.5rem;
+		outline: none;
+		padding-bottom: .5rem;
+		padding-left: 3.5rem;
+		position: relative;
+		&:before {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			display: block;
+			height: 2.5rem;
+			left: 0;
+			margin-right: 1rem;
+			position: absolute;
+			top: -.65rem;
+			width: 2.5rem;
+
+		}
+		&:visited {
+
+			color: $color__black;
+		}
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+		&[href]:hover {
+			color: $color__teal;
+		}
+	}
+	.email:before {
+
+		background-image: url(../images/VMBA_Icons-mail-teal.png);
+
+	}
+	.phone:before {
+
+		background-image: url(../images/VMBA_Icons-tel-teal.png);
+
+	}
+	.web:before {
+		background-image: url(../images/VMBA_Icons-web-teal.png);
+
+	}
+	.pin:before {
+		background-image: url(../images/VMBA_Icons-pin-teal.png);
+
+	}
+	.poi-title {
+		font-family: $font-_alt;
+		font-size: 1.75rem;
+		margin-top: .5em;
+	}
+	.poi-description, .nearby h3 {
+		color: $color__black;
+		font-size: 1.25rem;
+		font-weight: bold;
+		margin: 0;
+		margin-top: .75em;
+	}
+
+	.nearby ul {
+		font-size: 1rem;
+		font-weight: normal;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.poi-region {
+		display: block;
+	}
+	.difficulties {
+		display: inline;
+		font-weight: normal;
+		padding-left: .5em;
+	}
+	.difficulty {
+		display: inline;
+	}
+	.difficulty:not(:first-child):before {
+		content: ', ';
+		display: inline;
+	}
+	//com
+	article {
+		margin: 0;
+	}
+	.content {
+		padding-bottom: 2rem;
+	}
+
+}
+
+.facetwp-facet-type {
+	> .facetwp-checkbox {
+		background-position: 2rem 50% !important;
+		padding: .5rem 0 .5rem 3.5rem !important;
+		position: relative;
+		&:before {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			content: '';
+			display: block;
+			height: 1.5rem;
+			left: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 1.5rem;
+		}
+	}
+	.facetwp-depth {
+		margin-left: 3rem;
+	}
+}
+
+$terms: 'bike-shops', 'downhill-riding', 'guide-services-lessons', 'lodging', 'trails', 'food';
+
+@each $term in $terms {
+	.facetwp-checkbox[data-value='#{$term}']:before {
+		background-image: url('../images/icon-#{$term}.png');
+	}
+}

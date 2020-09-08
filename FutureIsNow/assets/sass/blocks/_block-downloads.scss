@@ -1,0 +1,46 @@
+.block.downloads {
+	padding-top: 1rem;
+	@include fluid-type(padding-bottom, 24px, 60px);
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+	}
+
+	/*content here*/
+
+
+	.file {
+		padding: 1.5rem $halfgutter;
+
+		&:nth-last-child(odd) {
+			background-color: #F3F8F8;
+		}
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+		color: black;
+		font-weight: 400;
+
+		&:hover {
+			color: $color__teal;
+		}
+
+		&:after {
+			content: '\2913';
+			padding-left: .25em;
+			color: $color__purple;
+			font-weight: 500;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+
+	}
+
+}

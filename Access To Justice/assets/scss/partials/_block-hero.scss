@@ -1,0 +1,120 @@
+.block-hero {
+
+
+	.inner-block-wrapper {
+		@include fluid-property('padding-left', 16px, 40px);
+		@include fluid-property('padding-right', 16px, 40px);
+	}
+
+	.hero-background {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		@include fluid-property('padding-top', 16px, 80px);
+		@include fluid-property('padding-bottom', 16px, 80px);
+		@include fluid-property('min-height', 200px, 500px);
+	}
+
+	&:first-child {}
+
+	/*
+	&.alignwide {
+		@include fluid-property('padding-left', 16px, 40px);
+		@include fluid-property('padding-right', 16px, 40px);
+	}
+*/
+	&.alignfull {
+
+		.inner-block-wrapper {
+			@include fluid-property('padding-left', 16px, 80px);
+			@include fluid-property('padding-right', 16px, 80px);
+
+		}
+
+	}
+
+
+	//
+	&.hhl-light {
+		.hero-headline {
+			color: white;
+		}
+
+		&.style-simple {
+			.hero-background {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.hero-copy {
+				color: white;
+
+				p {
+					color: inherit;
+				}
+			}
+
+		}
+	}
+
+
+	&.hhl-dark .hero-headline {
+		color: $black;
+	}
+
+	.hero-headline {
+		font-family: $font-main;
+		font-weight: 500;
+		max-width: 15ch;
+		margin-bottom: 1em;
+	}
+
+	&.style-simple {
+		.hero-headline {
+			margin-bottom: .4em;
+		}
+
+		.hero-copy {
+			font-family: $font-main;
+			font-weight: 400;
+			font-size: 1.2rem;
+			max-width: 32ch;
+			text-rendering: optimizeLegibility;
+		}
+	}
+
+	.inner-block-wrapper.copy-wrapper {
+		overflow-x: hidden;
+		position: relative;
+		@include fluid-property('padding-top', 16px, 40px);
+		@include fluid-property('padding-bottom', 16px, 40px);
+		background-color: $red;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			background-color: $blue;
+			top: 0;
+			bottom: 0;
+			right: -82.5%;
+			left: auto;
+			width: 100%;
+		}
+
+		.hero-copy {
+			color: white;
+			@include fluid-property(font-size, 20px, 27px);
+			font-family: $font-headings;
+			max-width: 62ch;
+			margin-right: 8ch;
+
+			p {
+				color: inherit
+			}
+
+		}
+	}
+
+}

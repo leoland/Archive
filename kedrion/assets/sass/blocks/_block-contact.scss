@@ -1,0 +1,64 @@
+.block.contact {
+
+	.inner-block-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-start;
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+			.boxed-section {
+				margin-right: 5vw;
+			}
+
+		}
+	}
+	.form--content {
+		flex-grow: 1;
+	}
+
+	.boxed-section {
+		flex-grow: 1;
+		display: block;
+
+		padding: 2em;
+		height: 0%;
+
+	.address-line {
+
+		font-size: .9em;
+		font-weight: bold;
+	}
+
+	.department {
+		margin-top: .65em;
+	}
+	.heading {
+		font-weight: bold;
+		font-size: .9em;
+	margin: 0 0 .2em;
+	}
+
+	ul, li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+	}
+	li {
+		padding-left: 1em;
+		position: relative;
+		padding-bottom: .2em;
+	}
+
+	li:before {
+		position: absolute;
+		left: 0;
+	}
+	li.f:before {
+		content: 'f ';
+	}
+	li.p:before {
+		content: 'p ';
+	}
+}
+}

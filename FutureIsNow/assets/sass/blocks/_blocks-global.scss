@@ -1,0 +1,316 @@
+.block {
+	position: relative;
+
+	@include fluid-type(padding-top, 24px, 60px);
+	@include fluid-type(padding-bottom, 24px, 60px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.bg-red {
+	background-color: $color__red;
+	background-color: rgba(216, 52, 18, 1);
+	color: white;
+}
+
+.bg-light-gray {
+	background-color: $color__grey-light;
+
+}
+
+.bg-gray {
+	background-color: $color__grey-light;
+}
+
+.bg-light-grey {
+	background-color: $color__grey-light;
+
+}
+
+.bg-black {
+	background-color: black;
+}
+
+.bg-dark-blue {
+	background-color: $color__blue--dark;
+	color: white;
+}
+
+.bg-white {
+	background: white;
+}
+
+.bg-light-blue {
+	background-color: $color__blue;
+	color: white;
+}
+
+.bg-light-blue+.bg-light-blue.stats {
+	padding-top: 0 !important;
+}
+
+.default-copy-white {
+	color: white;
+
+	&>p {
+
+		a,
+		a:visited {
+			color: white;
+		}
+	}
+}
+
+.default-copy-light-grey {
+	color: $color__grey-light;
+}
+
+.default-copy-grey {
+	color: $color__grey-dark;
+}
+
+.default-copy-light-blue {
+
+	color: $color__blue;
+}
+
+.default-copy-dark-blue {
+
+	color: $color__blue--dark;
+}
+
+.default-copy-red {
+
+	color: $color__red;
+}
+
+.block.copy-light {
+	color: white;
+}
+
+
+.block-template {
+	overflow: visible;
+	height: 0;
+	z-index: 100;
+	position: relative;
+	text-shadow: 0 0 10px black;
+}
+
+//todo turn this back on in production.
+.js .block {
+	opacity: 1;
+}
+
+.block {}
+
+.grid-on .block {}
+
+.outer-block-wrapper {
+	@extend .container;
+}
+
+.inner-block-wrapper {}
+
+.outer-block-wrapper .inner-block-wrapper {
+
+	&:before,
+	&:after {
+		display: none;
+	}
+}
+
+.edit-link {
+	// display: none !important;
+}
+
+.responsive-iframe {
+	position: relative;
+	overflow: hidden;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+
+	}
+}
+
+
+
+
+
+
+
+//embed
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.purple {
+	color: $color__purple;
+}
+
+.teal-ul {
+	border-bottom: solid 0.145rem $color__teal;
+	margin-bottom: .75rem;
+}
+
+
+
+.wpcs-schedule-wrapper {
+
+	.wpcs-schedule {
+		background-color: #EBF4F4;
+
+
+
+		td {
+			background: #EBF4F4;
+		}
+
+		thead {
+
+			.wpcs-col-time,
+			.wpcs-track-name {
+				//color: $color__teal;
+			}
+
+			th {
+				@include fluid-type(padding-top, 10px, 30px);
+				@include fluid-type(padding-bottom, 10px, 30px);
+			}
+
+			th:nth-child(odd) {
+				background-color: #D6EBEB;
+			}
+
+			th:nth-child(even) {
+				background-color: #BDE5E5;
+			}
+		}
+
+		.wpcs-col-time,
+		.wpcs-time {
+			@media(min-width: 700px) {
+				width: 200px;
+			}
+		}
+
+		.continued {
+			@media(max-width: 699px) {
+				.wpcs-time {
+
+					display: none;
+				}
+
+				margin-top: -17px;
+
+				td {
+					border-top: none;
+				}
+
+			}
+		}
+
+
+		.wpcs-session-type-session {
+			@media(min-width: 700px) {
+				background: linear-gradient(to right, transparent, transparent calc(50% - .5px), #BEE5E5 calc(50% - .5px), #BEE5E5 calc(50% + .5px), transparent calc(50% + .5px), transparent);
+			}
+		}
+
+		.wpcs-session-cell-content {
+			@media(min-width: 700px) {
+				display: flex;
+				flex-direction: row;
+
+
+				.wpcs-session-speakers,
+				h3 {
+					width: 50%;
+					margin-bottom: 0;
+				}
+
+				h3:last-child {
+					width: 100%;
+				}
+			}
+
+			.wpcs-session-speakers:before {
+				display: none;
+			}
+		}
+
+		tbody {
+			tr:nth-child(odd) .wpcs-time {
+				background-color: #BDE5E5;
+
+			}
+
+			tr:nth-child(even) .wpcs-time {
+
+				background-color: #D6EBEB;
+
+			}
+
+			tr td {
+				border: 1px solid#BEE5E5;
+			}
+
+			tr td.wpcs-time {
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.wpcs-schedule .wpcs-session-type-session {
+
+		margin-bottom: 0;
+	}
+}
+
+.font-size-18 {
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-size: 18px !important;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin-bottom: .5rem;
+	}
+}
+
+.hidden {
+	display: none;
+}

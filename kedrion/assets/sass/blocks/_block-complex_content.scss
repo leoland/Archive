@@ -1,0 +1,145 @@
+.block.complex_content {
+	.hero + & {
+		margin-top:  -$gutter;
+		padding-top : 0;
+		z-index     : 2;
+	}
+	.outer-block-wrapper {
+		@extend .container
+	}
+	.inner-block-wrapper {
+		@extend .row;
+		&:before, &:after {
+			display : none;
+		}
+		display         : flex;
+		flex-direction  : column;
+		justify-content : space-between;
+		@media (min-width : $bp_phone) {
+			display : block;
+		}
+	}
+	/*content here*/
+
+
+	.geometric-box {
+		padding             : $gutter;
+
+		padding-right       : 8.888888889rem;
+		color               : white;
+		position            : relative;
+		background-position : top right;
+		@media (min-width : $bp_tablet) {
+			margin : 0 $gutter* -1;
+			width  : calc(60% + #{$gutter});
+		}
+		&.blue {
+			background-image : linear-gradient(248deg, #{$color__blue} 160px, #{$color__black} 160px);
+		}
+		&.red {
+			background-image : linear-gradient(248deg, rgba(160, 1, 89, 1) 160px, #{$color__black} 160px);
+
+		}
+
+		.logo-area {
+			position         : absolute;
+			bottom           : 100%;
+			left             : -0;
+			width            : 100%;
+			padding          : $halfgutter $gutter 15px;
+			background-image : linear-gradient(248deg, rgba(0, 0, 0, 0) 200px, #{$color__white} 200px);
+			opacity          : .8;
+		}
+
+		.geo__heading {
+			@include fluid-type(font-size, 29.5px, 45px);
+			font-weight   : 300;
+			margin-bottom : $halfgutter;
+			color         : $color__white;
+		}
+
+		.geo__copy {
+			@include fluid-type(font-size, 19px, 24px);
+			font-family : $font-alt;
+			font-weight : 400;
+		}
+
+	}
+	.geometric-box, .main-copy {
+		@media (min-width : $bp_tablet) {
+			float : left;
+		}
+	}
+
+	.factoids {
+		color       : $color__blue--dark;
+		padding-top : $gutter;
+		@media (min-width : $bp_tablet) {
+			padding-top  : 9.4rem;
+			padding-left : $gutter;
+		}
+		.factoids__factoid {
+			display        : flex;
+			flex-direction : row;
+			margin-bottom  : $gutter;
+
+		}
+		.factoid__image {
+			flex-basis    : 5.555555556rem;
+			height        : auto;
+			padding-right : 1.388888889rem;
+			flex-shrink   : 0;
+			flex-grow     : 0;
+		}
+		h3 {
+			@include fluid-type(font-size, 19px, 24px);
+			font-weight : 700;
+		}
+		.factoid__copy {
+			line-height : 1.5;
+			&:first-child {
+				@include fluid-type(font-size, 19px, 24px);
+				font-weight : 700;
+				line-height : 1.2;
+			}
+		}
+
+	}
+
+	.main-copy {
+		padding-top : 4.444444444rem;
+		@media (min-width : $bp_tablet) {
+			width  : 60%;
+		}
+	}
+
+	.factoids, .featured-content {
+		@media (min-width : $bp_tablet) {
+			float : right;
+			width : 40%;
+		}
+
+	}
+
+	.featured-content {
+		padding-left : 5.555555556rem + $gutter;
+		h3 {
+			font-size     : 1rem;
+			font-weight   : 700;
+			color         : $color__black;
+			margin-bottom : 1rem;
+		}
+
+		a {
+			display         : block;
+			text-decoration : none;
+			margin-bottom   : 1rem;
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration : underline;
+			}
+		}
+	}
+}
+			

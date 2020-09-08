@@ -1,0 +1,163 @@
+.block.split_hovers {
+	min-height: auto;
+	margin: 0;
+	/*
+	Layout  and gen stuffs
+	 */
+
+	& * {
+		transition: opacity .5s;
+	}
+	padding: 0;
+	background: $color__teal-darker;
+
+	//the backgroudn stuff is pretty crazy
+	.hover-background {
+		width: 100vw;
+		position: absolute;
+		left: -1*$halfgutter;
+		right: -1*$halfgutter;
+		top: 0;
+		bottom: 50%;
+		z-index: 0;
+		opacity: .15;
+	}
+	.hover-background:last-child {
+		top: 50%;
+		bottom: 0;
+
+	}
+
+	@media (min-width: $bp_phone) {
+		.hover-background.hover-background {
+			width: 50vw;
+			right: 50%;
+			left: auto;
+			top: 0;
+			bottom: 0;
+			z-index: 0;
+			opacity: .95;
+		}
+		.hover-background.hover-background:last-child {
+			left: 50%;
+			right: auto;
+		}
+		.hover-section:nth-child(3) .photo-credit {
+			padding-left: 2* $gutter;
+		}
+		.hover-section:nth-child(1) .photo-credit {
+			padding-right: 2* $gutter;
+			left: auto;
+			right: 0;
+		}
+	}
+	.outer-block-wrapper {
+	}
+	.inner-block-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		@media(min-width: $bp_phone) {
+			flex-direction: row;
+		}
+	}
+	.hover-section {
+		width: 100%;
+		padding: 4.5rem $halfgutter;
+		position: relative;
+		z-index: 1;
+		&:first-child {
+			border-bottom: solid .2rem white;
+		}
+		@media(min-width: $bp_phone) {
+			&:first-child {
+				padding-right: 7vw;
+				.big-heading {
+					padding-right: 7vw;
+				}
+				border-right: solid .1rem white;
+			}
+			&:nth-child(3) {
+				border-left: solid .1rem white;
+				padding-left: 7vw;
+				.big-heading {
+					padding-left: 7vw;
+				}
+			}
+			width: 50%;
+			border-bottom: none !important;
+		}
+		@media (min-width: $bp_phone) and (max-width: $bp_desktop) {
+			min-height: 50vw;
+		}
+
+	}
+
+	/*
+	Hover states, the magic
+	 */
+	@media(min-width: $bp_phone) {
+		.hover-section:first-child:hover {
+			& ~ .hover-background:nth-child(2) {
+				opacity: .15;
+			}
+			.heading, .copy, .button {
+				opacity: 1;
+			}
+			.big-heading {
+				opacity: 0;
+			}
+		}
+
+		.hover-section:nth-child(3):hover {
+			& ~ .hover-background:nth-child(4) {
+				opacity: .15;
+			}
+			.heading, .copy, .button {
+				opacity: 1;
+			}
+			.big-heading {
+				opacity: 0;
+			}
+		}
+
+	}
+
+	/*
+	Typography
+	 */
+
+	color: $color__white;
+	.hover-section .heading {
+		font-size: 1.75rem;
+		font-family: $font__alt;
+	}
+	.big-heading {
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		opacity: 0;
+		text-shadow: 0 0 2em $color__teal-darker;
+		@media(min-width: $bp_phone) {
+			opacity: 1;
+		}
+	}
+	.heading, .copy, .button {
+		opacity: 1;
+		@media(min-width: $bp_phone) {
+			opacity: 0;
+		}
+	}
+	.copy {
+		line-height: 1.7;
+		margin-bottom: 1em;
+	}
+
+	.button:hover {
+		color: $color__teal;
+	}
+}
+			

@@ -1,0 +1,136 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/*
+Extends a divs background to fill the viewport on both sides,
+only ONE color is needed, additional arguments allow to specify left and right "bar" colors
+Remember html and body element should have overflow-x hidden to prevent scrollbars.
+
+color 1 will determine ALL the colors, color 2 overrides outside colors, color 3 overrides right side one.
+*/
+
+@mixin wide-background-color($color1, $color2: $color1, $color3: $color2, $important:'0') {
+	background-color: $color1;
+	position: relative;
+
+	@if ($important=='1') {
+
+		&:before,
+		&:after {
+			z-index: 0 !important;
+			content: "" !important;
+			position: absolute;
+			background-color: $color2 !important;
+			top: 0 !important;
+			bottom: 0 !important;
+			left: -999% !important;
+			right: 99% !important;
+			height: auto;
+			width: auto;
+		}
+
+		&:after {
+			background-color: $color3 !important;
+			left: 99% !important;
+			right: -999% !important;
+		}
+	}
+
+	@else {
+
+		&:before,
+		&:after {
+			height: auto;
+			width: auto;
+			z-index: 0;
+			content: "";
+			position: absolute;
+			background-color: $color2;
+			top: 0;
+			bottom: 0;
+			left: -999%;
+			right: 99%;
+		}
+
+		&:after {
+			background-color: $color3;
+			left: 99%;
+			right: -999%;
+		}
+	}
+
+}
+
+/*
+This mixin helps with fonts that could potentially get TOO small while scaling off of the general design.
+ */
+@mixin small-font($fullSize) {
+	font-size: calc(12px + (#{$fullSize} - 12) * (100vw - 600px) / (1400 - 600));
+}
+
+/*
+Buttons Mixins
+
+*/
+
+// =========================================================================
+//
+//  PRECISE CONTROL OVER RESPONSIVE TYPOGRAPHY FOR SASS
+//  ---------------------------------------------------
+//  Indrek Paas @indrekpaas
+//
+//  Inspired by Mike Riethmuller's Precise control over responsive typography
+//  http://madebymike.com.au/writing/precise-control-responsive-typography/
+//
+//  `strip-unit()` function by Hugo Giraudel
+//
+//  11.08.2016 Remove redundant `&` self-reference
+//  31.03.2016 Remove redundant parenthesis from output
+//  02.10.2015 Add support for multiple properties
+//  24.04.2015 Initial release
+//
+// =========================================================================
+
+@mixin fluid-type($properties,
+	$min-value: 14px,
+	$max-value: 16px,
+	$min-vw: 400px,
+	$max-vw: 1200px) {
+	@each $property in $properties {
+		#{$property}: $min-value;
+	}
+
+	@media screen and (min-width: $min-vw) {
+		@each $property in $properties {
+			#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+		}
+	}
+
+	@media screen and (min-width: $max-vw) {
+		@each $property in $properties {
+			#{$property}: $max-value;
+		}
+	}
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-lineheight() {}

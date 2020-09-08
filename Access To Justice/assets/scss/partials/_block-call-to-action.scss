@@ -1,0 +1,48 @@
+.block-call-to-action {
+
+
+	margin: 4rem 0;
+
+
+
+	overflow-x: hidden;
+
+	.inner-block-wrapper {
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		@include fluid-property(min-height, 200px, 500px);
+
+		@include fluid-property('padding-left', 16px, 40px);
+		@include fluid-property('padding-right', 16px, 40px);
+
+
+
+
+
+		&.alignfull {
+
+			.inner-block-wrapper {}
+
+		}
+
+	}
+
+
+	.callout-heading {
+		color: white;
+		margin-bottom: 0rem;
+	}
+
+	.callout-copy {
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	[class*="button"] {
+		margin-top: 1.5rem;
+	}
+}

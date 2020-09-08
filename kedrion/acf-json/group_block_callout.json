@@ -1,0 +1,178 @@
+{
+    "key": "group_block_callout",
+    "title": "Block - Callout",
+    "fields": [
+        {
+            "key": "field_5ca4bd5283ace",
+            "label": "Block Style",
+            "name": "block_style",
+            "type": "select",
+            "instructions": "This can be used as an actual call to action to guide users to a different page with a link,  to highlight short chunks of content or simply to break up a page with a large amount of content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "boxed": "boxed",
+                "dark-background": "dark-background",
+                "two-col": "two-col",
+                "two-tone": "two-tone",
+                "large-copy": "large-copy"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cdd980d745ff",
+            "label": "Two Col Content",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ca4bd5283ace",
+                        "operator": "==",
+                        "value": "two-col"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This callout style will attempt to distribute content equally across two columns. First filling out the column on the left and then continuing to the right",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ca4be1226382",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ca4bd5283ace",
+                        "operator": "!=",
+                        "value": "large-copy"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ca4be32129ce",
+            "label": "Subheading",
+            "name": "subheading",
+            "type": "text",
+            "instructions": "This will appear above the Heading",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ca4bd5283ace",
+                        "operator": "==",
+                        "value": "boxed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ca4be5d129cf",
+            "label": "Copy",
+            "name": "copy",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5ca4be68129d0",
+            "label": "Link",
+            "name": "link",
+            "type": "link",
+            "instructions": "This will display as a button.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ca4bd5283ace",
+                        "operator": "==",
+                        "value": "boxed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1572366354
+}

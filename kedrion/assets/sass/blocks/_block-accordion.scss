@@ -1,0 +1,225 @@
+.block.accordion {
+	padding: 2rem 0;
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		@extend .content;
+		position: relative;
+
+		&:before,
+		&:after {
+
+			display: none;
+		}
+
+
+
+		@media (min-width : $bp_phone) {}
+	}
+
+
+
+
+	.inner-block-wrapper {
+
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	.content {
+
+		margin: 0;
+
+		@extend .clearfix;
+	}
+
+
+
+	/*content here*/
+
+	/**
+	 * Accordion container element
+	 */
+	.accordion-wrapper,
+	.acc__copy {
+		margin-bottom: $gutter;
+
+	}
+
+	.accordion-wrapper {
+		border-bottom: solid 1px $color__orange;
+		max-width: 690px;
+	}
+
+	.acc__copy {}
+
+
+
+	.accordion {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.accordion>li {
+		margin: 0;
+		padding-left: 1rem;
+	}
+
+	/**
+	 * Add zero-width space. needed to ensure Safari + VO respect list semantics.
+	 * Set the before content to position absolute to negate any visible space
+	 * the before content could add to the document.
+	 */
+	.accordion>li:before {
+		content: "\200B";
+		position: absolute;
+	}
+
+	/**
+	 * Accordion Heading
+	 */
+	.accordion__heading {
+		margin: 0;
+		border-top: solid 1px $color__orange;
+		color: $color__blue--dark;
+		font-weight: 600;
+		font-size: 16px;
+
+
+	}
+
+	.accordion__trigger {
+		-webkit-appearance: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		cursor: pointer;
+		display: block;
+		font-size: inherit;
+		margin: 0;
+		padding: 1.25rem 0 1.25rem 1.5rem;
+		position: relative;
+		text-align: left;
+		width: 100%;
+		z-index: 2;
+		color: inherit;
+	}
+
+	.accordion__trigger:after {
+		display: block !important;
+		content: "\2023";
+		font-size: 1.6rem;
+		margin: auto;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%) rotate(90deg) scaleX(.6);
+		transition: transform .2s ease-in-out;
+		transform-origin: center center;
+		line-height: 0;
+		color: $color__orange;
+	}
+
+	.accordion__trigger:hover:after,
+	.accordion__trigger:focus:after {
+		transform: translateY(-50%) rotate(90deg) scaleX(.6) scaleY(-1);
+	}
+
+	.accordion__trigger[aria-expanded="true"]:after {
+
+		transform: translateY(-50%) rotate(90deg) scaleX(.6) scaleX(-1);
+
+	}
+
+	.accordion__trigger[aria-expanded="true"]:hover:after,
+	.accordion__trigger[aria-expanded="true"]:focus:after {}
+
+	/**
+	 * This is needed to allow a double tap iOS 11
+	 * Safari + VO to function correctly, if there
+	 * are multiple elements (wrapper spans) to layout
+	 * text nodes within the accordion button.
+
+		-- This is not needed if a button only contains text
+			 and no other child nodes wrapping the text --
+
+	.accordion__trigger > * {
+		pointer-events: none;
+	}
+	 */
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+
+
+	.accordion__trigger {
+		background-color: transparent;
+	}
+
+	.accordion__trigger:hover {
+		background-color: transparent;
+
+		outline: none;
+		transform: none;
+
+		&:after {
+			//color: #fff;
+		}
+
+	}
+
+	.accordion__trigger:focus {
+		//box-shadow : inset 0 0 0 2px #1e82d1;
+		//should add a way to handle this without disrupting mouse navigation. perhapse a mouse clicked calss owith js
+		outline: none;
+	}
+
+	.accordion__trigger[aria-disabled="true"]:hover {
+
+		background-color: transparent;
+		color: #fff;
+		cursor: not-allowed;
+	}
+
+	.accordion__trigger[aria-disabled="true"]:focus {}
+
+	.accordion__panel {
+
+		font-size: .875em;
+		max-height: 0vh;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		visibility: hidden;
+		z-index: 1;
+	}
+
+	.accordion__panel--transition {
+		transition: max-height .2s ease-in-out,
+			padding-top .2s ease-in-out,
+			padding-bottom .2s ease-in-out;
+	}
+
+	.accordion__panel> :last-child {
+		margin-bottom: 0;
+	}
+
+	.accordion__panel[aria-hidden="false"] {
+		padding: .5em 0 1.5em 1.5rem;
+		max-height: 999999px;
+		overflow: auto;
+		visibility: visible;
+	}
+
+	.accordion__trigger[aria-expanded="true"] {}
+
+
+}

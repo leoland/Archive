@@ -1,0 +1,230 @@
+.block.accordion {
+
+	padding: 1rem 0;
+	text-align: left;
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		position: relative;
+
+		&:before,
+		&:after {
+
+			display: none;
+		}
+
+		@media (min-width : $bp_phone) {}
+	}
+
+	.accordion-heading {
+		font-size: 1.458333333rem;
+		font-family: $font__alt;
+	}
+
+	//accordion stuff
+	.accordion-wrapper,
+	.acc__copy {
+		margin-bottom: $gutter;
+
+	}
+
+	.accordion-wrapper {}
+
+	.acc__copy {}
+
+
+
+	.accordion {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.accordion>li {
+		margin: 0;
+	}
+
+	/**
+ * Add zero-width space. needed to ensure Safari + VO respect list semantics.
+ * Set the before content to position absolute to negate any visible space
+ * the before content could add to the document.
+ */
+	.accordion>li:before {
+		content: "\200B";
+		position: absolute;
+	}
+
+	/**
+ * Accordion Heading
+ */
+	.accordion__heading {
+		margin: 0;
+		border-bottom: solid .083333333rem $color__grey-light;
+
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+
+	.accordion__trigger {
+		font-family: $font__alt;
+		-webkit-appearance: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		cursor: pointer;
+		display: block;
+		font-size: 1rem;
+		margin: 0;
+		padding: 1.2rem 3rem .8rem .5rem;
+		position: relative;
+		width: 100%;
+		z-index: 2;
+		font-weight: 600;
+		color: black;
+		text-align: left;
+		line-height: 1.3;
+
+
+
+	}
+
+	.accordion__trigger:after {
+		display: block;
+		content: '';
+		margin: auto;
+		margin-left: $gutter;
+		position: absolute;
+		right: .5rem;
+		top: 1.5rem;
+		line-height: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: .6em .6em 0 .6em;
+		border-color: $color__teal transparent transparent transparent;
+
+
+	}
+
+	.accordion__trigger:hover {
+
+		background-color: $color__grey-light;
+
+		&:after {
+			//color: #fff;
+		}
+
+	}
+
+	.accordion__trigger:hover:after,
+	.accordion__trigger:focus:after {}
+
+
+	.accordion__trigger[aria-expanded="true"] {
+		background: transparent;
+
+	}
+
+	.accordion__trigger[aria-expanded="true"]:after {
+		transform: scaleY(-1);
+
+	}
+
+	.accordion__trigger[aria-expanded="true"]:hover:after,
+	.accordion__trigger[aria-expanded="true"]:focus:after {}
+
+
+
+	.accordion__trigger:focus {
+		//box-shadow: inset 0 0 0 2px $color__purple;
+		//should add a way to handle this without disrupting mouse navigation. perhapse a mouse clicked calss owith js
+		outline: none;
+		//background-color: $color__grey-light;
+	}
+
+	.accordion__trigger[aria-disabled="true"]:hover {
+
+		background-color: transparent;
+		color: #fff;
+		cursor: not-allowed;
+	}
+
+	.accordion__trigger[aria-disabled="true"]:focus {}
+
+	/**
+ * This is needed to allow a double tap iOS 11
+ * Safari + VO to function correctly, if there
+ * are multiple elements (wrapper spans) to layout
+ * text nodes within the accordion button.
+
+	-- This is not needed if a button only contains text
+		 and no other child nodes wrapping the text --
+
+.accordion__trigger > * {
+	pointer-events: none;
+}
+ */
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+
+
+
+
+	.accordion__panel {
+
+
+		max-height: 0vh;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		visibility: hidden;
+		z-index: 3;
+		font-family: $font__main;
+
+	}
+
+	.accordion__panel--transition {
+		transition: max-height .2s ease-in-out,
+			padding-top .2s ease-in-out,
+			padding-bottom .2s ease-in-out;
+	}
+
+	.accordion__panel> :last-child {
+		margin-bottom: 0;
+	}
+
+	.accordion__panel[aria-hidden="false"] {
+		padding: 1rem .5rem 1rem;
+		margin-bottom: 1.5rem;
+		max-height: 999999px;
+		visibility: visible;
+		box-shadow: 0 5px 10px 0px rgba(0, 0, 0, .2);
+		position: relative;
+		overflow: visible;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+
+			background-image: linear-gradient(to bottom, white 0%, white 40%, rgba(255, 255, 255, 0) 100%);
+			top: -5px;
+			left: -15px;
+			right: -15px;
+			bottom: -5px;
+			z-index: -1;
+
+		}
+	}
+
+
+
+}

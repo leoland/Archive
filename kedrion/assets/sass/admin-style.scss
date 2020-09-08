@@ -1,0 +1,37 @@
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "grid";
+@import "reboot";
+@import "typography/typography";
+
+typog .mce-toolbar .mce-btn.mce-orange-hr .mce-ico {
+	color: orange;
+}
+
+
+div:hover,
+div:focus,
+div:focus-within {
+	border: dotted red 1px;
+	background: rgb(214, 220, 226);
+}
+
+.emphasize {
+	color: rgb(0, 104, 104);
+	font-style: italic;
+}
+
+em {
+	border: solid red 5px;
+	padding: 1em;
+}
+
+div.highlighted-content {
+	border-top: 1px solid black;
+	border-bottom: solid 1px black;
+}
+
+.highlighted-block {
+	padding: 1em;
+	border: solid orange 2px;
+}

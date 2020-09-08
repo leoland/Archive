@@ -1,0 +1,47 @@
+//ifk colors
+//header
+//header black 80%
+
+
+$color__grey: #9C979E;
+$color__grey-light: rgba(239, 239, 239, 1);
+
+$color__red: rgba(255, 39, 0, 1);
+
+$color__blue--dark: rgba(26, 6, 95, 1);
+
+$color__teal: #22B4AF;
+$color__teal-light: lighten($color__teal, 10%);
+$color__teal-lightest: #F5F9FA;
+$color__purple: #61218C;
+$color__blue: rgba(0, 70, 144, 1);
+$color__blue-light: #0988a8;
+$color__orange: #dd5a22;
+$color__green: #b5c338;
+$color__yellow: #F5FD93;
+
+
+
+$color__grey-dark: #363636;
+
+//default styles below this line
+// --------------------------------
+
+$color__background-body: #ffffff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+//mainly for forms & accesibility
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+
+//these are main typography colors
+$color__link: $color__blue;
+$color__link-visited: $color__blue;
+$color__link-hover: $color__red;
+$color__text-main: inherit;
+$line_background: white;

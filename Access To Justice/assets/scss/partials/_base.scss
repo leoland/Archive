@@ -1,0 +1,102 @@
+// Colors
+$white: #fff;
+$grey_1: #FAFAFA;
+$grey_2: #F5F5F5;
+$grey_3: #EEEEEE;
+$grey_4: #E0E0E0;
+$grey_5: #BDBDBD;
+$grey_6: #9E9E9E;
+$grey_7: #757575;
+$grey_8: #616161;
+$grey_9: #404143;
+$grey_10: #212121;
+$red: #c20f2f;
+$blue: #39c0e0;
+$black: #000;
+$teal: #00bab3;
+$orange: #ff6c00;
+$blue_2: #0042a3;
+$yellow: #ffcb22;
+$pueple: #73308a;
+$green: #93d500;
+
+
+
+// Brand Colors
+$brand_colors: ('red': $red,
+	'blue': $blue,
+	'black': $black,
+	'dark grey': $grey_10,
+	'teal': $teal,
+	'orange': $orange,
+	'blue_2': $blue_2,
+	'yellow': $yellow,
+	'purple': $pueple,
+	'white' : $white);
+@import "../modules/brand-color";
+
+$facebook: #3B5998;
+$twitter: #00B6F1;
+$pinterest: #CB2027;
+
+$base-color: $grey_9;
+$highlight: brand-color('blue');
+$border-color: $grey_4;
+
+// Fonts
+/*
+font-family: 'Cabin', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+*/
+
+
+$font-alt: 'Roboto',
+sans-serif;
+$font-alt-condensed: 'Roboto Condensed',
+sans-serif;
+$font-main:'Cabin',
+sans-serif;
+$font-headings: $font-main;
+$font-copy: $font-main;
+
+$serif: $font-alt;
+$sans-serif: $font-copy;
+
+
+// Content
+$content-width: 768px;
+$wide-block-width: 1140px;
+$full-block-width: 1300px;
+$block-margin: 1rem;
+
+// Grid
+$grid: grid;
+$grid-width: 1140px;
+$grid-gap: 32px;
+$base-margin: 1rem;
+$wrap_edge: $base-margin;
+$margin_2x: $base-margin * 2;
+$margin_4x: $base-margin * 4;
+$max-grid-width: 1300px;
+// Site Header
+$logo_width: 165px;
+$menu_width: $logo_width+$grid-gap;
+$persistant_mobile: false; // 49px
+$persistent_desktop: false; // 49px
+
+
+// Include Media
+$breakpoints: ('phone' : 360px,
+	'small' : 768px,
+	'tablet' : 768px, // required for include-media
+	'mobile_menu' : 768px,
+	'medium' : 992px,
+	'large' : 1140px,
+	'desktop': $grid-width + $grid-gap, // required for include-media
+	'content-width': $content-width + $grid-gap,
+);
+
+@import "../modules/helpers";
+@import "../vendor/_include-media";
+@import "../modules/base-styles";

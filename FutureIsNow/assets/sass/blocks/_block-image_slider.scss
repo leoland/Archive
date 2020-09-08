@@ -1,0 +1,158 @@
+.block.image_slider {}
+
+
+//slider changes
+
+
+
+.slick-slider * {
+	outline: none;
+
+}
+
+.slick-slider {
+
+	.slick-next,
+	.slick-prev {
+		z-index: 2;
+		width: 4rem;
+		height: 4rem;
+		font-size: 3rem;
+
+
+		&:hover {
+			transform: translate(0, -50%);
+			box-shadow: none;
+		}
+
+		&:before {
+			font-size: 1em;
+			content: '\f078';
+			font-family: "Font Awesome 5 Free";
+			font-weight: 600;
+			transform: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.slick-prev {
+		left: -3.5rem;
+
+		&:before {
+			content: '\f053';
+		}
+	}
+
+	.slick-next {
+		right: -3.5rem;
+
+		&:before {
+			content: '\f054';
+		}
+	}
+}
+
+.slide-wrapper {}
+
+.slide-image {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 60%;
+}
+
+.slick-list {}
+
+.slick-list .slick-track {
+
+	/*
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+*/
+	img {
+		max-width: 100% !important
+	}
+}
+
+.slick-slide {
+	//opacity: 0;
+	outline: none;
+}
+
+.slick-slide.slick-current {
+	opacity: 1;
+}
+
+.image-thumbs {
+	.slick-slide {
+		opacity: .33;
+	}
+
+	.slick-slide.slick-current {
+		opacity: 1;
+	}
+}
+
+.images-wrapper {
+	padding-bottom: $gutter;
+}
+
+.equipment-images,
+.image-slider {
+
+	.slick-next,
+	.slick-prev {
+
+		width: 4rem;
+		height: 4rem;
+		padding: .25rem;
+		font-size: 2.5rem;
+		opacity: .5;
+		background-color: rgba(255, 255, 255, .9);
+		border-radius: 50%;
+		transform: translate(0, -50%);
+		box-shadow: none;
+		transition: all .3s;
+
+		&:hover {
+			transform: translate(0, -50%);
+			background-color: rgba(255, 255, 255, .9);
+			box-shadow: none;
+			opacity: 1;
+		}
+
+		&:before {
+			font-size: 1em;
+			transition: all .3s;
+		}
+	}
+
+	.slick-prev {
+		left: 1rem;
+
+		&:before {
+			content: '\f053';
+		}
+	}
+
+	.slick-next {
+		right: 1rem;
+
+		&:before {
+			content: '\f054';
+		}
+	}
+}
+
+.image-thumbs {
+	margin: $gutter $halfgutter*(-1) 0;
+
+	img {
+		padding: 0 $halfgutter;
+	}
+}

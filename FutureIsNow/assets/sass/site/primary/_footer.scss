@@ -1,0 +1,245 @@
+#colophon {
+	background: $color__grey-dark;
+	color: white;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+	@include fluid-type(margin-top, 40px, 80px);
+
+	.top-footer,
+	.bottom-footer {
+
+		width: 100%;
+
+
+
+		.inner-block-wrapper {
+			@media(min-width: $bp_tablet) {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-content: flex-start;
+				align-items: flex-start;
+			}
+
+			@media (min-width: $bp_desktop) {
+				justify-content: center;
+				justify-content: space-between;
+				align-content: stretch;
+				align-items: stretch;
+
+				&>* {}
+
+
+			}
+		}
+
+
+
+	}
+
+	.top-footer {
+		background-color: #EBF4F4;
+		padding: 0;
+
+		.inner-block-wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: flex-start;
+			align-items: flex-start;
+		}
+
+		.two-civ-logo {}
+
+
+	}
+
+
+	.bottom-footer {
+		padding: 1rem 0;
+		position: relative;
+
+		.inner-block-wrapper {}
+	}
+
+
+	.first,
+	.second {
+		padding: 1rem 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+
+	.first,
+	.second {}
+
+	.first {
+		@media (min-width: $bp_tablet) {
+			align-content: flex-start;
+			align-items: flex-start;
+
+			p {
+				text-align: left;
+			}
+		}
+
+		.small {
+			font-size: 20px;
+			color: $color__teal;
+		}
+	}
+
+	.second {
+
+		order: 3;
+
+	}
+
+	.social-links {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-content: center;
+		align-items: center;
+		margin: 1rem -4px;
+
+		@media (min-width: $bp_desktop) {
+
+
+			text-align: center;
+		}
+
+		a {
+			text-decoration: none;
+			$size: 2.416666667rem;
+			width: $size;
+			height: $size;
+			color: white;
+			background: #555555;
+			margin: 0 4px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			transition: all .5s;
+
+			&:hover {
+
+				background: $color__teal;
+			}
+		}
+
+		i {
+			color: inherit;
+		}
+	}
+
+	.second {
+
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		span {
+			text-align: center;
+			@include fluid-type(font-size, 16px, 20px);
+			margin-bottom: .5em;
+			display: block;
+
+		}
+
+		.store-buttons {
+			display: flex;
+			flex-wrap: no-wrap;
+			flex-direction: row;
+			margin-bottom: 1rem;
+		}
+
+		.store {
+			margin: 0 .5rem;
+			transition: all .3s;
+			border-radius: 5px;
+
+			&:hover {
+				opacity: .8;
+				transform: translateY(-1px);
+				box-shadow: 1px 1px 1px -1px rgba(255, 255, 255, .2);
+			}
+		}
+
+		.small {}
+	}
+
+	.footer-logo {
+		padding-bottom: 1.5rem;
+
+		@media (min-width: 1200px) {
+			justify-self: flex-start;
+		}
+	}
+
+
+	.address {
+		@include fluid-type(font-size, 16px, 20px);
+		text-align: center;
+
+		p {
+			margin: 0;
+		}
+
+
+
+
+	}
+
+
+	.last {
+		img {
+
+			margin: 1rem auto 0;
+			display: block;
+		}
+
+		@media (min-width: $bp_tablet) {
+			position: absolute;
+			top: 1rem;
+			left: 50%;
+			transform: translateX(-50%);
+
+
+		}
+
+	}
+
+	.small {
+		text-align: center;
+		font-size: 14px;
+
+		@media (min-width: $bp_tablet) {
+			text-align: right;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		a {
+			color: white;
+			text-decoration: underline;
+		}
+	}
+
+
+
+
+
+}

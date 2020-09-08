@@ -1,0 +1,170 @@
+.block.gallery {
+	margin: 0;
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+
+	.inner-block-wrapper {
+		@extend .row;
+	}
+
+	/*content here*/
+
+	.facetwp {
+		@extend .col-sm-12;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+			display: block;
+		}
+	}
+
+	.sidebar,
+	.content {
+		padding: 0;
+		width: 100%;
+
+		@media (min-width: $bp_phone) {
+			float: left;
+		}
+	}
+
+	.sidebar {
+		@media (min-width: $bp_phone) {
+			width: 23%;
+		}
+	}
+
+	.content {
+		@media (min-width: $bp_phone) {
+			width: 76.5%;
+			float: right;
+		}
+	}
+
+	.facetwp-facet {
+		margin-bottom: 2rem;
+	}
+
+	.facetwp-type-checkboxes {
+		margin-bottom: 0;
+	}
+
+	.list {
+
+		width: calc(100% + 1em);
+		width: 100%;
+		margin: -.5em;
+		margin-top: 0;
+
+		.facetwp-template {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			@media (min-width: $bp_phone) {
+				flex-direction: row;
+				padding-left: 2rem;
+			}
+		}
+	}
+
+	.facetwp-checkbox {
+		//background: url(../images/checkbox-unchecked.png) 0 50% no-repeat;
+		cursor: pointer;
+		margin-bottom: .5em;
+		padding-left: 1.5rem;
+		font-size: .8em;
+		position: relative;
+		background: none;
+		line-height: 1.2;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			width: 1em;
+			height: 1em;
+			top: .05em;
+			left: 0;
+
+			padding-left: .1em;
+
+		}
+
+		&.checked:before {
+			font-size: 1em;
+			color: white;
+			content: '✓';
+			border: none;
+		}
+	}
+
+	.facetwp-checkbox.checked {
+		//	background-image: url(../images/checkbox-checked.png) !important;
+	}
+
+	.facetwp-search-wrap {
+		width: 100%;
+
+		input {
+			text-transform: uppercase;
+
+			width: 100%;
+		}
+
+		.facetwp-btn {
+			margin: 0;
+			padding: .1rem .5rem;
+		}
+	}
+
+	.tax-filter {
+		margin-bottom: 1em;
+	}
+
+	.label {
+		display: block;
+		font-size: .9rem;
+		font-weight: bold;
+		margin-bottom: 1em;
+		text-transform: uppercase;
+	}
+
+	.single-gallery-image {
+		width: 100%;
+		padding-top: 60%;
+		position: relative;
+		min-height: 60vw;
+
+		@media (min-width: $bp_phone) {
+
+			width: 50%;
+			padding-top: 35%;
+
+			min-height: 22vw;
+		}
+
+		@media (min-width: $bp_desktop) {
+			width: 33.333333%;
+			padding-top: 23%;
+
+			min-height: 14vw;
+		}
+
+		.thumbnail {
+			margin: .5em;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+}

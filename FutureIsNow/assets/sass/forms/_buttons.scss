@@ -1,0 +1,90 @@
+//dvariables for buttons
+
+[class*="btn"],
+[class*="btn-primary"],
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	/* Button reset */
+	font-size: .833333333rem;
+	font-weight: 500;
+	$color: $color__teal;
+	text-shadow: none;
+	transition: all 0.5s ease;
+	background-color: $color;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 0;
+	min-width: 7.4rem;
+	text-align: center;
+	line-height: 1.5;
+	margin: .5rem;
+	color: white;
+	padding: 0.5em .5em .4em;
+	border: solid 1px transparent;
+
+	&:visited {
+
+		color: white;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color;
+		background-color: white;
+		border: solid 1px $color;
+	}
+
+	&:after {
+		display: none !important;
+	}
+
+	&:first-child:last-child {
+		margin: 0;
+	}
+}
+
+[class*="btn-alt"] {
+	$color: $color__purple;
+	background-color: $color;
+	border: solid 1px transparent;
+
+	&:hover,
+	&:focus {
+		color: $color;
+		background-color: white;
+		border: solid 1px $color;
+	}
+
+	&:visited {}
+}
+
+[class*="btn-tert"] {
+	$color: $color__grey;
+	background-color: $color;
+	border-color: transparent;
+
+	&:hover,
+	&:focus {
+		color: $color;
+		background-color: white;
+		border: solid 1px $color;
+	}
+
+	&:visited {}
+}
+
+.buttons {
+	margin: 0 -0.5rem;
+}
+
+
+p {
+
+	[class*="btn"] {
+		margin-left: 0;
+	}
+
+
+}

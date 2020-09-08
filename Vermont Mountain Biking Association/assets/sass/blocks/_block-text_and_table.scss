@@ -1,0 +1,32 @@
+.block.text_and_table {
+
+	/*content here*/
+	.text_and_table--content .intro {
+		@extend .col-md-12;
+	}
+	table {
+		margin: 2.75rem 0 1.5em;
+	}
+
+	@media (max-width: $bp_phone) {
+		.table-wrapper {
+			overflow-x: scroll;
+		}
+		th:first-child,
+		th,
+		td:first-child,
+		td {
+			min-width: 150px;
+		}
+	}
+	@media (max-width: $bp_tablet) {
+		th {
+			font-size: .85rem;
+			padding-left: 15px;
+		}
+		td, tr {
+			font-size: .8rem;
+			padding: 15px;
+		}
+	}
+}

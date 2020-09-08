@@ -1,0 +1,121 @@
+html {
+	font-family: $font__main;
+	font-weight: 400;
+	line-height: 1.3125;
+	@include fluid-type(font-size, 14px, 16px);
+	color: $color__gray--dark;
+}
+
+dfn,
+cite,
+i,
+.emphasize {
+	font-family: $font-alt;
+	font-size: 1.2rem;
+	font-weight: 500;
+	font-style: italic;
+	line-height: 1.5;
+}
+
+em {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0 0 0 1.75em;
+	font-weight: 700;
+	position: relative;
+	z-index: 1;
+
+	&:before {
+		content: "";
+		display: block;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 2.5em;
+		width: 2.75em;
+		position: absolute;
+		left: 0;
+		top: 1.2em;
+		z-index: -1;
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: $color__background-pre;
+	font-family: $font__pre;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font__code;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	cursor: help;
+}
+
+mark,
+ins {
+	text-decoration: none;
+}
+
+big {
+	font-size: 1.25em;
+}
+
+.featured-copy {
+	font-family: $font-alt;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 1.285714286;
+}
+
+.block_quote__copy,
+.highlighted-content {
+	font-size: 1.1em;
+	font-style: italic;
+	font-family: lato;
+	font-weight: 400;
+	line-height: 1.545454545;
+}
+
+//todo find a home for some of these styles
+.highlighted-content {
+	position: relative;
+	margin-bottom: 1rem;
+	border-right: none;
+	border-left: none;
+	padding: 1.5rem 0 0 5rem;
+
+
+
+	.highlighted-content+& {
+		margin-top: 0;
+		border-top: 0;
+
+		padding-top: .5rem;
+
+		&:before {
+			top: .5rem;
+		}
+
+	}
+}

@@ -1,0 +1,339 @@
+/*
+Use this file primarily for DEFAULT posts and pages or for relatively GLOBAL styles i.e if the styles for archives will apply for multiple post types or are styles that will work for most pages. that being said, most global styles should be going on a client specific "base styles file"
+*/
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*
+event stuff
+ */
+#tribe-events {
+
+	#tribe-bar-form {
+		.tribe-bar-submit {
+			@media (min-width: 792px) {
+				margin-top: 15px;
+			}
+			input[type='submit'] {
+
+				@extend .btn-default;
+			}
+		}
+
+		.tribe-events-page-title {
+			@extend .heading;
+		}
+	}
+	p {
+		font-size: 1rem;
+		line-height: 1.6 !important;
+	}
+	.entry-summary {
+		margin-top: 0 !important;
+
+		p:first-of-type {
+			margin-top: -5px;
+		}
+
+	}
+	.tribe-events-event-image + .tribe-events-list-event-description {
+
+		p:first-child:first-line {
+			margin-left: calc(30% + .75rem);
+			width: calc(70% - .75rem);
+		}
+	}
+	.tribe-events-event-image {
+		display: block;
+		margin: 0 $gutter $halfgutter 0 !important;
+	}
+}
+
+.page-voice .pre-heading {
+	text-transform: none !important;
+}
+
+span.lowercase {
+	text-transform: lowercase !important;
+}
+
+#tribe-events-content .tribe-events-read-more {
+	color: $color__teal;
+
+	padding: .5em 0;
+	position: relative;
+	&:after {
+		content: '⟶';
+		font-size: 1.6em;
+		padding-left: .5em;
+		position: relative;
+		top: .025em;
+		vertical-align: center;
+	}
+
+	&:hover {
+		color: $color__blue-dark;
+	}
+}
+
+.events-list .tribe-events-loop, #tribe-events-bar {
+	margin: 0 auto !important;
+	max-width: 800px !important;
+}
+
+#tribe-events-bar {
+	margin-bottom: 2em !important;
+}
+
+.single-tribe_events #tribe-events {
+	.tribe-events-single-event-title {
+		font-family: $font__alt;
+		font-size: 2rem;
+		font-weight: normal;
+	}
+
+	.tribe-events-schedule {
+		font-size: .9rem !important;
+	}
+
+	.tribe-events-event-image {
+		margin: 0 0 2rem !important;
+	}
+
+	.tribe-events-single-event-description strong, .url {
+
+		font-weight: normal;
+		a {
+			color: $color__teal;
+			font-weight: 600;
+			&:hover {
+				color: $color__blue-dark;
+				text-decoration: underline;
+			}
+		}
+
+	}
+	.tribe-events-gmap {
+		color: $color__teal;
+		font-weight: 600;
+		&:hover {
+			color: $color__blue-dark;
+			text-decoration: underline;
+		}
+	}
+	.tribe-events-button {
+		background-color: transparent;
+		background-color: $color__teal;
+		border: none;
+		border-radius: 0px;
+		display: inline-block;
+		font-family: $font__main;
+		font-size: .85rem;
+		font-weight: bold;
+		margin: .5rem;
+		/* Button reset */
+		padding: .7em 1.1em;
+		text-shadow: none;
+		text-transform: uppercase;
+		transition: all 120ms ease;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.tribe-events-cal-links {
+		margin: 0 -.5rem;
+	}
+	.tribe-events-event-meta {
+		background: transparent;
+		border: none;
+		margin: 0 -4%;
+		width: calc(100% + 8%);
+	}
+}
+
+//tribe events date picker
+
+.page-blog {
+	.post-snippet {
+		margin-bottom: $gutter;
+		h2.entry-title {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+html body.page-blog #page {
+	.facet-reset {
+		color: $color__teal !important;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+}
+
+.single-post {
+	.block.entry-content .outer-block-wrapper {
+		position: relative;
+	}
+	.post-meta-stuff {
+
+		@media (min-width: $bp_phone) {
+			max-width: 200px;
+			float: left;
+			margin: 0 2rem 1rem 0;
+		}
+		@media (min-width: $bp_desktop) {
+			float: none;
+			margin: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.cat-heading, .detail-heading, .share-title {
+		color: $color__teal;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 1.2;
+	}
+
+	.cat-list, .detail-content {
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 1.5;
+	}
+	.at-share-btn-elements {
+		margin: .5rem 0 0;
+		padding: 0;
+
+		.at-share-btn {
+			background: transparent;
+			color: black;
+			margin-left: 0;
+			margin-right: .5rem;
+			width: auto;
+		}
+		.at-label {
+			display: none;
+		}
+	}
+	.content {
+		float: left;
+		@media (min-width: $bp_desktop) {
+			float: none;
+		}
+		margin: 0 auto;
+		max-width: 768px;
+		width: 100%;
+	}
+}
+
+.block.general_copy {
+
+	//	max-width: 768px;
+	margin: 0 auto;
+}
+
+.slick-slider-wrapper {
+	background: lightgrey;
+	margin: 1rem 3.5rem 3rem;
+	max-width: 100%;
+
+	button {
+		background-color: transparent !important;
+	}
+
+	.slick-prev, .slick-next {
+
+		border-radius: 50%;
+		height: 3.5rem;
+		opacity: .5;
+		width: 3.5rem;
+		&:before {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: initial;
+			color: transparent;
+			display: block;
+			font-size: 3.5rem;
+			line-height: 1.15;
+		}
+		&:hover {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: initial;
+			opacity: 1;
+		}
+	}
+	.slick-slider.slick-slider .slick-arrow.slick-prev {
+		left: auto;
+		right: 100%;
+		&:before {
+			background-image: url(../images/arrow-grey-left.png);
+		}
+	}
+	.slick-slider .slick-arrow.slick-next {
+		left: 100%;
+		right: auto;
+		&:before {
+			background-image: url(../images/arrow-grey-left.png);
+			transform: scaleX(-1);
+		}
+	}
+
+	.slick-dots {
+		bottom: -2rem;
+	}
+
+}
+
+.style-1 .slick-slider-wrapper {
+	.slick-slider.slick-slider .slick-arrow.slick-prev {
+		&:before {
+			background-image: url(../images/arrow-dark-left.png);
+		}
+	}
+	.slick-slider .slick-arrow.slick-next {
+		&:before {
+			background-image: url(../images/arrow-dark-left.png);
+			transform: scaleX(-1);
+		}
+	}
+
+}
+
+.comment-form-cookies-consent {
+	label {
+		display: inline;
+		margin-left: 1em;
+	}
+}

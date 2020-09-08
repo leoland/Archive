@@ -1,0 +1,79 @@
+p,
+.copy,
+.accordion__panel {
+
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+a {
+	color: $color__link;
+	font-weight: inherit;
+
+	text-decoration: none;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+a:not([href]):empty {
+	/* Styles for anchors without href */
+	// position: relative;
+	// top: -2em;
+}
+
+
+.site {
+
+	p,
+	li,
+	span,
+	em,
+	dl,
+	blockquote {
+
+		a.caret[href]:after {
+			display: inline;
+			content: "\00a0>";
+			position: relative;
+			top: -0.05em;
+			padding: 0 0 0 0.25em;
+			white-space: nowrap;
+		}
+	}
+}
+
+.breadcrumbs span a:after {
+	display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	a {
+		color: inherit !important;
+	}
+
+	a:visited {
+		color: inherit !important;
+	}
+}

@@ -1,0 +1,15 @@
+.general-copy {
+	background: lightgrey;
+
+
+
+	&.alignfull {
+		max-width: $full-block-width;
+		margin: 0 auto;
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		background: red;
+	}
+}

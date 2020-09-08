@@ -1,0 +1,68 @@
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2.hero--title {
+	font-weight: normal;
+	font-size: 2.5em;
+	line-height: 1.1;
+	@media (min-width: $bp-phone) {
+		font-size: 3em
+	}
+	@media (min-width: $bp-tablet) {
+		font-size: 3.5em
+
+	}
+}
+
+h2,
+h3.callout--title,
+h3.text_and_icons--title,
+h3.image_slider--title,
+h3.logo_block--title {
+	font-weight: bold;
+	font-family: $font__main;
+	font-size: 1.54em;
+	@media (min-width: $bp-phone) {
+		font-size: 1.8em
+	}
+@media (min-width: $bp-tablet) {
+	font-size: 2.1em
+}
+}
+
+h3 {
+	font-size: 1.32em;
+	font-family: $font__main;
+	font-weight: bold;
+	@media (min-width: $bp-phone) {
+		font-size: 1.54em
+	}
+	@media (min-width: $bp-tablet) {
+
+		font-size: 1.8em;
+	}
+}
+
+h4 {
+	font-size: 1.1em;
+	font-family: $font__main;
+	font-weight: bold;
+	@media (min-width: $bp-phone) {
+		font-size: 1.29em
+	}
+	@media (min-width: $bp-tablet) {
+		font-size: 1.5em
+	}
+}
+h5,h6 {
+	text-transform: uppercase;
+	font-size: .9em;
+	font-family: $font__accent;
+}
+h6{
+	font-size: .85em;
+}

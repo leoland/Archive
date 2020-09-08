@@ -1,0 +1,32 @@
+div:not(div.datepicker) {
+	table {
+		margin: 0 0 1.5em;
+		width: 100%;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	table th, table td {
+		min-width: 150px;
+		padding: 0.25em;
+		text-align: left;
+		width: auto;
+	}
+
+	table th {
+
+		background: rgba(0, 0, 0, .05);
+	}
+
+	table tfoot {
+		border-top: 1px grey solid;
+	}
+
+	table tr {
+		&:nth-child(even) {
+			background: rgba(0, 0, 0, .05);
+		}
+	}
+}

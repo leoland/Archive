@@ -1,0 +1,89 @@
+
+.block.default-1, .block {
+
+	background: white;
+}
+
+.block.default-2 {
+	background: $color__gray-light;
+}
+
+.block.default-3 {
+}
+
+.block.default-4 {
+}
+
+//todo turn this back on in production.
+.js .block {
+		opacity: 0;
+}
+
+.block {
+	position: relative;
+	padding: 3.5rem 0 3.5rem;
+	@extend .clearfix;
+	@media (min-width: $bp_phone){
+	}
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.grid-on .block {
+	border-bottom: 1px dashed $color__gray;
+}
+
+.outer-block-wrapper {
+	@extend .container;
+}
+.inner-block-wrapper {
+	@extend .row;
+}
+  
+.outer-block-wrapper .inner-block-wrapper {
+	&:before, &:after {
+		display: none;
+	}
+}
+
+.photo-credit{
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: .5rem;
+	padding-left: $halfgutter;
+	font-family: $font__alt;
+	@include fluid-type(font-size,400px,1600px,10px, 12px);
+	color: $color__gray;
+	opacity: .8;
+	text-shadow: 0 0  3em rgba(40, 70, 52,1), 0 0 4em rgba(0,0,0,.5);
+}
+
+
+
+.block
+ {
+	.pre-heading {
+		font-size: 1rem;
+		margin-bottom: 0;
+		font-family: $font__accent;
+		text-transform: uppercase;
+	}
+	.heading, .big-heading, .tribe-events-page-title {
+		font-family: $font__alt;
+		@include fluid-type(font-size, 400px, 1600px, 32px, 60px) ;
+		line-height: 1.2;
+
+		font-weight: normal;
+	}
+}
+
+
+
+.buttons {
+	margin-right: -.5rem;
+	margin-left: -.5rem;
+	width: calc(100% + 1rem);
+}
+

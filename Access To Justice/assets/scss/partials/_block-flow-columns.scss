@@ -1,0 +1,45 @@
+.block-flow-columns {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+	&.bg-transparent {
+		margin: 4rem 0;
+	}
+
+	&.bg-white {}
+
+	overflow: hidden;
+
+	.intro {
+		text-align: center;
+
+		h2 {
+			margin-bottom: .25rem;
+		}
+
+		.copy {
+
+			@include fluid-property(font-size, 20px, 24px);
+			margin-bottom: .5rem;
+		}
+	}
+
+
+
+	.flow-inner-wrapper {
+		column-count: auto;
+		position: relative;
+	}
+
+
+	.flow-content-area {
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+		position: relative;
+	}
+
+	hr:first-child {
+		display: none;
+	}
+}

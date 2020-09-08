@@ -1,0 +1,35 @@
+table,
+table.tablepress {
+	margin: 0 0 1.5em;
+	width: 100%;
+	text-align: left;
+	color: #444444;
+	font-size: 13px;
+	border-spacing: 1px;
+	line-height: 1.35;
+
+	th,
+	td {
+		padding: .25rem .5rem;
+		vertical-align: top;
+	}
+
+	th,
+	thead th {
+		font-weight: regular;
+		background-color: $color__orange;
+		color: white;
+		text-transform: uppercase;
+
+	}
+
+	tr:nth-child(even) td {
+		background-color: lighten($color__gray, 5%) !important;
+	}
+
+	tr:nth-child(odd) td {
+		background-color: lighten(#E5E5E5, 5%) !important;
+	}
+
+
+}

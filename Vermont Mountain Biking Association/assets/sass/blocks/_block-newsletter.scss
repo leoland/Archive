@@ -1,0 +1,69 @@
+.block.newsletter {
+	&.style-1{
+		background: $color__gray-light;
+	}
+	&.style-2{
+		background: $color__white;
+	}
+
+	padding: $gutter 0;
+	min-height: auto;
+  .outer-block-wrapper {
+	@extend .container;
+		@media(max-width: $bp_phone - 1px) {
+			width: 100%;
+		}
+  }
+  .inner-block-wrapper {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		@media (min-width: $bp_phone){
+			flex-direction: row;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+  }
+  /*content here*/
+h3{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1rem;
+
+	@media (min-width: $bp_phone){
+		text-align: right;
+		padding-right: $gutter;
+		width: 50%;
+	}
+}
+  .form {
+		width: 100%;
+		@media (min-width: $bp_phone){
+			text-align: right;
+			padding-left: $gutter;
+			width: 50%;
+		}
+	}
+
+	.gform_footer .button{
+		margin: 0;
+	}
+	.form form {
+		@media (min-width: $bp_phone ){
+			display: flex;
+			input{
+				font-size: .9rem !important;
+				padding: 1rem !important;
+			}
+			* {margin: 0 !important;}
+			.gform_footer {
+				width: auto;
+			}
+		}
+	}
+
+}
+			

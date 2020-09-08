@@ -1,0 +1,103 @@
+html {
+	box-sizing: border-box;
+	background-color: white;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {}
+
+
+
+hr {
+	border: 0;
+	height: 1px;
+	margin-bottom: $halfgutter;
+}
+
+@import "lists";
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+@import "tables";
+
+
+
+
+//sharebar stuffs
+
+ul.share-content {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	$icon-size: 1rem;
+
+	.bookmark a,
+	.email a,
+	.print a,
+	.social {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+
+		&:hover,
+		&:focus,
+		&:focus-within {}
+
+		&:before {
+			display: block;
+			padding-right: .75rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			transform: translateY(12%);
+		}
+	}
+
+	li {
+		margin: 0;
+		padding: 0;
+
+		&:before {
+			display: none;
+		}
+
+	}
+
+	.bookmark a:before {
+		content: url(../../assets/images/icon-bookmark.png);
+	}
+
+	.email a:before {
+		content: url(../../assets/images/icon-email.png);
+	}
+
+	.print a:before {
+		content: url(../../assets/images/icon-print.png);
+	}
+
+	.social:before {
+		content: url(../../assets/images/icon-share-arrow.png);
+	}
+}

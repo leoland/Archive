@@ -1,0 +1,50 @@
+.block.hero {
+	padding: 0;
+	position: relative;
+	//padding: 1em 0;
+	background-size: cover;
+	background-position: center center;
+	.outer-block-wrapper {
+		position: relative;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		min-height: calc(20rem + 15vw);
+		display: flex;
+		align-items: center;
+	}
+
+	.inner-block-wrapper {
+		height: 100%;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+.button {
+	margin-top: calc(2rem + 1.5vw);
+}
+
+	color: white;
+	.hero--content {
+		@extend .col-md-12;
+		text-align: center;
+		padding: 0;
+		//test
+	}
+	.filter {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		background: radial-gradient(transparentize($color__green,.75), transparentize($color__green,.9));
+
+
+}
+}

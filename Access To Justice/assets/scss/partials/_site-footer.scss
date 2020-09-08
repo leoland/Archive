@@ -1,0 +1,294 @@
+/* Footer Widgets
+----------------------------------------------------------------------------------------------------
+
+.footer-widgets {
+	background: brand-color('black');
+	padding: 40px 0 10px;
+	position: relative;
+
+	ul {
+		margin-bottom: 30px;
+	}
+
+	li {
+		list-style-type: none;
+		margin-bottom: 12px;
+	}
+
+	.widget-title {
+		color: $white;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	a {
+		color: $white;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		svg {
+			fill: $white;
+			@include icon-position(20px);
+			margin-right: 12px;
+		}
+	}
+
+	@include media("<tablet") {
+		.social-links li {
+			display: inline-block;
+			margin: 0;
+		}
+
+		.social-links .label {
+			display: none;
+		}
+
+		.footer-widgets-1 {
+			float: left;
+			width: calc(50% - 8px);
+		}
+
+		.footer-widgets-2 {
+			float: right;
+			width: calc(50% - 8px);
+		}
+
+		.footer-widgets-3 {
+			overflow: hidden;
+			width: 100%;
+		}
+	}
+
+	@include media(">=tablet") {
+		.wrap {
+			@include columns(3, 'div');
+		}
+	}
+}
+
+ */
+/* Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+	background: brand-color('black');
+	color: rgba($white, .75);
+	font-size: 14px;
+	padding: 32px 0 0;
+	@include fluid-property('padding-top', 16px, 50px);
+	text-align: center;
+
+	.wrap>*:last-child {
+		margin-bottom: 0;
+	}
+
+	a {
+		color: rgba($white, .75);
+
+		&:hover {
+			color: rgba($white, 1);
+		}
+	}
+
+	.footer-links a+a {
+		margin-left: 12px;
+	}
+
+	.cafemedia {
+		text-transform: uppercase;
+	}
+
+	.backtotop {
+		background: rgba($black, .75);
+		border-radius: 3px;
+		display: inline-block;
+		line-height: 20px;
+		padding: 10px;
+		text-decoration: none;
+
+		svg {
+			fill: $white;
+			margin-left: 4px;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			background: rgba($black, 1);
+		}
+	}
+
+	@include media(">=tablet") {
+		text-align: left;
+
+		.footer-left {
+			float: left;
+
+			&>*:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.copyright,
+		.footer-links {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		.backtotop {
+			float: right;
+		}
+	}
+
+
+	.wrap {
+		color: white;
+		font-size: 1rem;
+		font-family: $font-alt;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: top;
+		align-content: flex-start;
+
+
+		&>[class*="footer"] {
+			padding: 1.5rem 0;
+			width: 100%;
+			text-align: left;
+
+			@media screen and (min-width: 800px) {
+				width: calc(50% - 1.5rem);
+			}
+
+			@media screen and (min-width: 1024px) {
+				width: calc(33.333% - 1.5rem);
+				position: relative;
+				padding-bottom: 2.5rem;
+			}
+
+		}
+
+
+		h3 {
+			color: inherit;
+			font-size: 1.35rem;
+			margin: 0;
+			margin-top: -0.25em !important;
+			line-height: 1.25;
+			margin-bottom: .75rem;
+
+		}
+
+
+		.footer-home-link {
+			width: auto;
+			display: inline-block;
+
+		}
+
+		.gform_wrapper {
+			margin: 0;
+
+			label.gfield_label {
+				display: none;
+			}
+
+			.ginput_container_email input {
+				width: 100%;
+				$color: $grey_9;
+				max-width: 335px;
+
+
+				::-moz-placeholder {
+					color: $color;
+					opacity: 1;
+				}
+
+				::-ms-input-placeholder {
+					color: $color;
+				}
+
+				::-webkit-input-placeholder {
+					color: $color;
+				}
+			}
+
+			.gform_footer {
+				margin-top: 1.25rem;
+
+				input {
+					float: left;
+				}
+
+
+			}
+		}
+
+		.gform_footer input,
+		.careers-button {
+
+			float: left;
+			font-weight: 500;
+			text-shadow: none;
+			transition: all 0.5s ease;
+			font-family: $font-alt;
+			display: inline-block;
+			padding: 0.5em 1em .4em;
+			text-decoration: none;
+			min-width: 7em;
+			text-align: center;
+			line-height: 1.5;
+			color: $blue;
+			border: solid 1.5px $blue;
+			background-color: transparent;
+			width: auto;
+
+
+			&:visited {
+				color: $blue;
+			}
+
+			&:hover {
+				text-decoration: none;
+				background-color: $blue;
+				color: $white;
+
+			}
+
+			&:after {
+				display: none;
+			}
+
+			@media screen and (min-width: 1024px) {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+		}
+
+		.footer-bottom {
+			width: 100%;
+			flex-basis: 100%;
+			text-align: left;
+			font-size: 14px;
+
+			.small,
+			.bottom-links {
+				display: inline;
+
+				a,
+				a:visited {
+					color: inherit
+				}
+			}
+
+
+		}
+	}
+
+}

@@ -1,0 +1,154 @@
+.block.posts_with_filtering {
+
+	.outer-block-wrapper {
+		@extend .container
+	}
+	.inner-block-wrapper {
+
+	}
+	h4 {
+		font-size: 44px;
+		font-weight: normal;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+	.post-filters {
+		button, .facetwp-checkbox {
+			font-size: .8rem;
+			font-weight: bold;
+			text-transform: none;
+			display: inline-block;
+			background: none;
+			padding: 1em;
+			margin: .5em;
+			color: $color__gray;
+			border: none !important;
+			line-height: 1.2;
+			&:hover, &.checked {
+				color: $color__white !important;
+			}
+		}
+		text-align: center;
+		.facetwp-facet-categories {
+			display: block;
+			@media (min-width: $bp_phone) {
+				display: inline-block;
+			}
+		}
+		.facetwp-counter {
+			display: none;
+		}
+	}
+
+	article {
+		@extend .col-md-4;
+	}
+
+	.facetwp-pager {
+		display: inline-block;
+		font-size: 1.25rem;
+		margin-bottom: 15px;
+		text-align: center;
+		width: 100%;
+		.facetwp-pager-label {
+			display: block;
+			margin-right: 0;
+		}
+	}
+
+	.facetwp-selections ul {
+		margin-left: 0;
+		padding-left: 0;
+		li {
+			display: block;
+			margin-bottom: .5em;
+		}
+		.facetwp-selection-label {
+			font-weight: bold;
+		}
+	}
+	.post-wrapper {
+
+	}
+
+	.facetwp-template {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: $bp_phone) {
+			flex-direction: row;
+			flex-wrap: wrap;
+
+		}
+
+	}
+	.outer-post-wrapper {
+
+		position: relative;
+		flex-grow: 1;
+		width: 100%;
+		padding: 2em 0;
+
+		@media (min-width: $bp_phone) {
+			padding: 2em $gutter;
+			max-width: 33.3333333333%;
+			border-bottom: solid .04em transparentize($color__light-gray, .5);
+			border-top: none;
+			border-left: none;
+			border-right: solid .04em transparentize($color__light-gray, .5);
+			&:nth-child(3n) {
+				border-right: none;
+			}
+			&:last-child, &:nth-last-child(2):nth-child(3n-2), &:nth-last-child(2):nth-child(3n-1), &:nth-last-child(3):nth-child(3n-2) {
+				border-bottom: none;
+			}
+		}
+
+	}
+	.post-wrapper {
+		background-size: cover;
+		background-position: center center;
+		width: 100%;
+		padding-top: 50%;
+		position: relative;
+	}
+	.cat-list {
+		list-style: none;
+		position: absolute;
+		bottom: 1em;
+		left: -$halfgutter;
+		margin: 0;
+		padding: 0;
+
+		li {
+
+			background-color: $color__gray;
+			color: white;
+			font-size: .75em;
+			padding: .3em .9em;
+			margin-bottom: .5em
+		}
+	}
+
+	.text-wrapper {
+		display: block;
+
+		width: 100%;
+		padding: .8em 0;
+	}
+	.date {
+		display: block;
+		font-size: .75em;
+	}
+	.title {
+		line-height: 1.2;
+		font-size: .9em;
+		a, a:visited {
+			color: $color__gray;
+		}
+	}
+
+}
+
+.featured_posts + .posts_with_filtering {
+	padding-top: 0;
+}
